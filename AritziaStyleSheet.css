@@ -1,0 +1,54 @@
+#aritzia{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
+h2#customerlogintitle{
+    font-family: "Non-Seasonal Sans", sans-serif; Non-Seasonal Sans, sans-serif;
+    text-align: center;
+    font-size: 15pt;
+    }
+
+    /* p#log{
+        font-family: "Non-Seasonal Sans", sans-serif; Non-Seasonal Sans, sans-serif;
+        text-align: center;
+        font-size: 12pt; 
+        }
+
+    p#pw{
+        font-family: "Non-Seasonal Sans", sans-serif; Non-Seasonal Sans, sans-serif;
+        text-align: center;
+
+        font-size: 12pt; 
+        }
+    */ 
+
+/* overarching text box */ 
+
+p#loginbox{
+    text-align:center;
+    font-family: sans-serif;
+    font-size: 13pt;
+}
+
+#log1{
+    font-family: sans-serif;
+    width: 200px;
+    height: 20px;
+    }
+
+#pw1{
+    align-self: center;
+    width: 200px;
+    height: 20px;
+    }
+
+input#submit{
+    border: 2pt;
+    color: white;
+    background-color: black;
+    margin-top: 5px;
+    width: 200px;
+    height: 50px;
+    font-size: 13pt;
+}
