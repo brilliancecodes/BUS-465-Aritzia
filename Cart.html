@@ -24,7 +24,7 @@
     Order Summary
 	<table border=1 style="border:1px">
 	<tr>
-	<td>Subtotal: $<span id="price2"></span></td>
+	<td>Subtotal: $<span id="subtotal"></span></td>
 	</tr>
 	<tr>
 	<td>Taxes: $<span id="taxes"></span></td>
@@ -54,9 +54,13 @@ function getParameterByName(name, url = window.location.href) {
 document.getElementById("image").src = getParameterByName('image');
 document.getElementById("item").innerHTML = getParameterByName('item');
 document.getElementById("price").innerHTML = getParameterByName('price');
-document.getElementById("price2").innerHTML = getParameterByName('price');
-document.getElementById("taxes").innerHTML = getParameterByName('price')*0.12;
-document.getElementById("total").innerHTML = getParameterByName('price')*1.12;
+var subtotal = getParameterByName('price')*getParameterByName('quantity');
+document.getElementById("subtotal").innerHTML = parseFloat(subtotal).toFixed(2);
+var taxrate = 0.12;
+var taxes = getParameterByName('price')*getParameterByName('quantity')*taxrate;
+document.getElementById("taxes").innerHTML = parseFloat(taxes).toFixed(2);
+var total = getParameterByName('price')*getParameterByName('quantity')*(1+taxrate);
+document.getElementById("total").innerHTML = parseFloat(total).toFixed(2);
 document.getElementById("size").innerHTML = getParameterByName('size');
 document.getElementById("colour").innerHTML = getParameterByName('colour');
 document.getElementById("quantity").innerHTML = getParameterByName('quantity');
