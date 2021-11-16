@@ -137,67 +137,9 @@ INSERT INTO ITEMS
     ON IL.LOCATION_ID = L.LOCATION_ID
     WHERE Item_Colour = "White" AND Size = "S" AND Location_Name = "Richmond";
     
-    #Output would be 4 
+    #Output_would_be_4 
     
-    /*INSERT INTO LOCATION
-		VALUES(1, 'Metrotown', 1, 5);
-            INSERT INTO LOCATION
-		VALUES(1, 'Metrotown', 2, 1);
-            INSERT INTO LOCATION
-		VALUES(1, 'Metrotown', 3, 2);
-        INSERT INTO LOCATION
-		VALUES(1, 'Metrotown', 4, 5);
-            INSERT INTO LOCATION
-		VALUES(1, 'Metrotown', 5, 0);
-            INSERT INTO LOCATION
-		VALUES(1, 'Metrotown', 6, 3);
-        INSERT INTO LOCATION
-		VALUES(1, 'Metrotown', 7, 5);
-            INSERT INTO LOCATION
-		VALUES(1, 'Metrotown', 8, 2);
-            INSERT INTO LOCATION
-		VALUES(1, 'Metrotown', 9, 10);
-        
-           INSERT INTO LOCATION
-		VALUES(2, 'Guildford', 1, 0);
-                   INSERT INTO LOCATION
-		VALUES(2, 'Guildford', 2, 3);
-                   INSERT INTO LOCATION
-		VALUES(2, 'Guildford', 3, 5);
-                   INSERT INTO LOCATION
-		VALUES(2, 'Guildford', 4, 7);
-                   INSERT INTO LOCATION
-		VALUES(2, 'Guildford', 5, 2);
-                   INSERT INTO LOCATION
-		VALUES(2, 'Guildford', 6, 1);
-                   INSERT INTO LOCATION
-		VALUES(2, 'Guildford', 7, 5);
-                   INSERT INTO LOCATION
-		VALUES(2, 'Guildford', 8, 3);
-                   INSERT INTO LOCATION
-		VALUES(2, 'Guildford', 9, 10);
-        
-        INSERT INTO LOCATION
-		VALUES(3, 'Richmond', 1, 2);
-         INSERT INTO LOCATION
-		VALUES(3, 'Richmond', 2, 2);
-         INSERT INTO LOCATION
-		VALUES(3, 'Richmond', 3, 2);
-         INSERT INTO LOCATION
-		VALUES(3, 'Richmond', 4, 0);
-         INSERT INTO LOCATION
-		VALUES(3, 'Richmond', 5, 13);
-         INSERT INTO LOCATION
-		VALUES(3, 'Richmond', 6, 5);
-         INSERT INTO LOCATION
-		VALUES(3, 'Richmond', 7, 2);
-         INSERT INTO LOCATION
-		VALUES(3, 'Richmond', 8, 4);
-         INSERT INTO LOCATION
-		VALUES(3, 'Richmond', 9, 2);*/
-        
-        
-        
+
             
 
     
