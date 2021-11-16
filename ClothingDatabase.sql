@@ -69,7 +69,7 @@ INSERT INTO ITEMS
     CONSTRAINT fk_has_item FOREIGN KEY (ITEM_ID) REFERENCES ITEMS(Item_ID),
     CONSTRAINT fk_has_location FOREIGN KEY (LOCATION_ID) REFERENCES LOCATION(LOCATION_ID)
     );
-    
+    ##Items_In_Metrotown
     INSERT INTO Items_At_Location
 		VALUES (1, 1, 1,5);
          INSERT INTO Items_At_Location
@@ -88,7 +88,7 @@ INSERT INTO ITEMS
 		VALUES (1, 8, 1,4);
          INSERT INTO Items_At_Location
 		VALUES (1, 9, 1,1);
-        
+      ##Items_In_Guildford  
      INSERT INTO Items_At_Location
 		VALUES (2, 1, 2,5);
          INSERT INTO Items_At_Location
@@ -109,6 +109,7 @@ INSERT INTO ITEMS
 		VALUES (2, 9, 2,4);
     
     
+    ##Items_In_Richmond
       INSERT INTO Items_At_Location
 		VALUES (3, 1, 3,4);
          INSERT INTO Items_At_Location
