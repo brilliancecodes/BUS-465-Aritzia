@@ -136,6 +136,8 @@ INSERT INTO ITEMS
     ON IL.LOCATION_ID = L.LOCATION_ID
     WHERE Item_Colour = "White" AND Size = "S" AND Location_Name = "Richmond";
     
+    #Output would be 4 
+    
     /*INSERT INTO LOCATION
 		VALUES(1, 'Metrotown', 1, 5);
             INSERT INTO LOCATION
