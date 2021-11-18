@@ -9,22 +9,6 @@ h2#customerlogintitle{
     font-size: 15pt;
     }
 
-    /* p#log{
-        font-family: "Non-Seasonal Sans", sans-serif; Non-Seasonal Sans, sans-serif;
-        text-align: center;
-        font-size: 12pt; 
-        }
-
-    p#pw{
-        font-family: "Non-Seasonal Sans", sans-serif; Non-Seasonal Sans, sans-serif;
-        text-align: center;
-
-        font-size: 12pt; 
-        }
-    */ 
-
-/* overarching text box */ 
-
 p#loginbox{
     text-align:center;
     font-family: sans-serif;
@@ -51,6 +35,12 @@ input#submit{
     width: 200px;
     height: 50px;
     font-size: 13pt;
+    }
+
+#aa{
+    border-style:solid;
+    border-width: 1px;
+    border-
 }
 
 /* Split the screen in half */
