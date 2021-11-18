@@ -4,21 +4,31 @@
 	<meta charset="utf-8">
 	<title>Aritzia's Login Page</title>
     <link rel="stylesheet" href="AritziaStyleSheet.css" />
+	<h1><img id = "aritzia", 
+		src="https://www.aritzia.com/on/demandware.static/Sites-Aritzia_CA-Site/-/default/dw29c878d3/images/aritzia_skin/aritzia_logo.svg"> 
+	</h1>
+	<br><br>
+	<hr>
+	<br><br>
+	<h2 id= "customerlogintitle"> Customer Login </h2>
+	<br><br>
+	<hr>
+	<br>
 </head>
 <body>
 	<form action="aritzia.php" method="POST">
-
-		<h1><img id = "aritzia", 
-            src="https://www.aritzia.com/on/demandware.static/Sites-Aritzia_CA-Site/-/default/dw29c878d3/images/aritzia_skin/aritzia_logo.svg"> 
-        </h1>
-        <h2 id= "customerlogintitle"> Customer Login </h2>
 		<p id = "loginbox">
-			Email Address: <INPUT TYPE="emailaddress" NAME="" value= "" id="log1">
-            <br>
-			Password: <input type="password" name="password" value="" id="pw1"> <br>
-			<input type="submit" name="submit" value="Submit" id="submit"> </p> 
-			<br><br>
-			<br><br>
+			Email Address: <INPUT TYPE="emailaddress" NAME="email" value= "" id="log1"><br><br>
+			Password: <input type="password" name="password" value="" id="pw1"> <br> <br>
+			<input type="submit" name="submit" value="Sign In" id="submit">
+		</p>
 	</form>
+	<a href = "aritziaregister.php">
+		<div style= "text-align:center;
+		font-family: sans-serif;
+		font-size: 13pt;">
+			<input type="submit" name="register" value="Register" id="submit"> 
+		</div>
+	</a>
 </body>
-</html>	
+</html>		
