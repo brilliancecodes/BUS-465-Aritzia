@@ -19,6 +19,7 @@
 
 <?php
     session_start();
+    echo"<div>logged in user:</div>";
     echo $_SESSION['user'];
 
     $db = mysqli_connect("localhost", "hwa134", "Q968EhWeHbBFc74LfZtsdYXrG");
@@ -28,17 +29,80 @@
 	$email = $_SESSION['user'];
     $query = "SELECT * from customerlogin WHERE email = '$email'; "; 
     $result = mysqli_query($db, $query);
-    
+
     if($result){
         $x=mysqli_fetch_row($result);
+        $number = $x[4];
+        $masked = str_pad(substr($number,-3), strlen($number), '*', STR_PAD_LEFT);
+        echo "<p class='custheading'>Customer Shipping Information</p>";
         echo "
-        <table><tr>
-        <td>
-        <br><h3>First Name: ",$x[0],"</h3>
-        <br><h3>Last Name: ",$x[1],"</h3>
-        </td></tr></table>";
+        <table style='border: 1px solid black;margin-left:auto;margin-right:auto;'>
+        <tr> 
+        <h3><th>First Name:</th><td>",$x[0],"</td></h3>
+        </tr>
+        <tr>
+        <h3><th>Last Name:</th><td>",$x[1],"</td></h3>
+        </tr>
+        <tr> 
+        <h3><th>Email:</th><td>",$x[2],"</td></h3>
+        </tr>
+        <tr>
+        <h3><th>Credit Card:</th><td>",print($masked),"</td></h3>
+        </tr>
+        <tr> 
+        <h3><th>Billing Address:</th><td>",$x[5],"</td></h3>
+        </tr>
+        <tr> 
+        <h3><th>City:</th><td>",$x[6],"</td></h3>
+        </tr>
+        <tr> 
+        <h3><th>Province:</th><td>",$x[7],"</td></h3>
+        </tr>
+        <tr> 
+        <h3><th>Country:</th><td>",$x[8],"</td></h3>
+        </tr>
+        <tr> 
+        <h3><th>Postal Code:</th><td>",$x[9],"</td></h3>
+        </tr>
+        </table>";
+        echo "<p class='custheading'>Customer Billing Information</p>";
+        echo "
+        <table style='border: 1px solid black;margin-left:auto;margin-right:auto;'>
+        <tr> 
+        <h3><th>First Name:</th><td>",$x[0],"</td></h3>
+        </tr>
+        <tr>
+        <h3><th>Last Name:</th><td>",$x[1],"</td></h3>
+        </tr>
+        <tr> 
+        <h3><th>Email:</th><td>",$x[2],"</td></h3>
+        </tr>
+        <tr>
+        <h3><th>Credit Card:</th><td>",print($masked),"</td></h3>
+        </tr>
+        <tr> 
+        <h3><th>Billing Address:</th><td>",$x[5],"</td></h3>
+        </tr>
+        <tr> 
+        <h3><th>City:</th><td>",$x[6],"</td></h3>
+        </tr>
+        <tr> 
+        <h3><th>Province:</th><td>",$x[7],"</td></h3>
+        </tr>
+        <tr> 
+        <h3><th>Country:</th><td>",$x[8],"</td></h3>
+        </tr>
+        <tr> 
+        <h3><th>Postal Code:</th><td>",$x[9],"</td></h3>
+        </tr>
+        </table>";
+        
     }
-
+    echo"<a href='confirm.php'>
+            <div class='submitbutton'>
+                <input type='submit' name ='confirm' value='Confirm' id='confirm'>
+            </div>"
+        </a>
     mysqli_close($db);
 ?>
 </body>
