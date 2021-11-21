@@ -23,7 +23,7 @@
 			<input type="submit" name="submit" value="Sign In" id="submit">
 		</p>
 	</form>
-	<a href = "aritziaregister.php">
+	<a href = "aritziaregister.html">
 		<div class= "submitbutton">
 			<input type="submit" name="register" value="Register" id="submit"> 
 		</div>
