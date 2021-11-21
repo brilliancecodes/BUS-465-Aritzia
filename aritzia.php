@@ -5,6 +5,8 @@
 </head>
 <body>
 	<?php
+		session_start();
+		
 		$email= $_POST["email"]; 
 		$password =$_POST["password"];
 
@@ -32,29 +34,13 @@
 			$_Session["login"]=0;
 			$_SESSION["email"]='0';
 			echo "<p>Sorry, the email or password is incorrect. Click <a href='https://datalab3.bus.sfu.ca/hwa134/aritzia%20login%20page.html'>here to go back to Homepage</a>";
-			echo "<br>For testing purpose, value of count=",$count;
+			//echo "<br>For testing purpose, value of count=",$count;
 			
 			
 		}
 
-/* <p>Sorry, the email or password is incorrect.</p>; 
-echo '<p>Sorry, the email or password is incorrect. Click <a href='aritzia.php'>here to go back to the login page</a></p>';*/ 
-
-
- /*       echo "<table border = 1>";
-
-        while($row = mysqli_fetch_row($result))
-        {
-            echo "<tr>";
-            foreach($row as $cell)
-                echo "<td>$cell</td>";
-            echo "</tr>\n";
-        }
-            
-        echo "</table>";
-*/
 		mysqli_close($db);
-		/*add a button to redirect if username or password is incorrect*/
+
 	?>
 	
 </body>
