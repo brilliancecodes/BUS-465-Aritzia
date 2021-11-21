@@ -23,46 +23,48 @@ $reg=register();
 if($reg){
 	echo "You have successfully created an account with Aritzia."
 	echo "Here are the details of your registration.<br>"
-	$masked = str_pad(substr($number,-3), strlen($number), '*', STR_PAD_LEFT);
 	echo "<p class='custheading'>Customer Account Information</p>";
 	echo "
 	<table style='border: 1px solid black;margin-left:auto;margin-right:auto;'>
 	<tr> 
-	<h3><th>First Name:</th><td>",$x[0],"</td></h3>
+	<h3><th>First Name:</th><td>",$_POST['firstname'],"</td></h3>
 	</tr>
 	<tr>
-	<h3><th>Last Name:</th><td>",$x[1],"</td></h3>
+	<h3><th>Last Name:</th><td>",$_POST['lastname'],"</td></h3>
 	</tr>
 	<tr> 
-	<h3><th>Email:</th><td>",$x[2],"</td></h3>
+	<h3><th>Email:</th><td>",$_POST['email'],"</td></h3>
 	</tr>
 	<tr>
-	<h3><th>Credit Card:</th><td>",print($masked),"</td></h3>
+	<h3><th>Credit Card:</th><td>",$_POST['creditcard'],"</td></h3>
 	</tr>
 	<tr>
-	<h3><th>Expiry Date:</th><td>",$x[5],"</td></h3>
+	<h3><th>Expiry Date:</th><td>",$_POST['expiry'],"</td></h3>
 	</tr>
 	<tr>
-	<h3><th>CVV:</th><td>",$x[6],"</td></h3>
+	<h3><th>CVV:</th><td>",$_POST['cvv'],"</td></h3>
 	</tr>
 	<tr> 
-	<h3><th>Billing Address:</th><td>",$x[7],"</td></h3>
+	<h3><th>Billing Address:</th><td>",$_POST['billingaddress'],"</td></h3>
 	</tr>
 	<tr> 
-	<h3><th>City:</th><td>",$x[8],"</td></h3>
+	<h3><th>City:</th><td>",$_POST['city'],"</td></h3>
 	</tr>
 	<tr> 
-	<h3><th>Province:</th><td>",$x[9],"</td></h3>
+	<h3><th>Province:</th><td>",$_POST['province'],"</td></h3>
 	</tr>
 	<tr> 
-	<h3><th>Country:</th><td>",$x[10],"</td></h3>
+	<h3><th>Country:</th><td>",$_POST['country'],"</td></h3>
 	</tr>
 	<tr> 
-	<h3><th>Postal Code:</th><td>",$x[11],"</td></h3>
+	<h3><th>Postal Code:</th><td>",$_POST['postalcode'],"</td></h3>
 	</tr>
 	</table>";
+else{
+	echo"'Please try again later',$msg,";
 }
-
+}
+echo '<script>
 function register(){
 global $msg;
 $db = mysqli_connect("localhost", "hwa134", "Q968EhWeHbBFc74LfZtsdYXrG");
@@ -91,14 +93,14 @@ if($db!=NULL) {
 				$msg="Successfully signed up.";return true;
 			} else{$msg="Cannot register for an account at this moment."; return false;}
 			} else{$msg="Cannot register for an account at this moment."; return false;}
+
 		}else {$msg="Cannot register for an account at this moment."; return false;}
 	}else{$msg="Cannot register for an account at this moment."; return false;}
 }else{$$msg="Cannot register for an account at this moment."; return false;}
 mysqli_close($db);
 }
-
+</script>' 
 ?>
 
 </body>
 </html>
-
