@@ -8,14 +8,15 @@
 <body>
 <h1><img id = "aritzia", 
             src="https://www.aritzia.com/on/demandware.static/Sites-Aritzia_CA-Site/-/default/dw29c878d3/images/aritzia_skin/aritzia_logo.svg"> 
-        </h1>
-        <br><br>
+            <br><br>
         <hr>
         <br><br>
         <h2 id= "customerlogintitle"> Customer Profile </h2>
         <br><br>
         <hr>
         <br>
+        </h1>
+
 
 <?php
     session_start();
@@ -49,20 +50,26 @@
         <tr>
         <h3><th>Credit Card:</th><td>",print($masked),"</td></h3>
         </tr>
-        <tr> 
-        <h3><th>Billing Address:</th><td>",$x[5],"</td></h3>
+        <tr>
+        <h3><th>Expiry Date:</th><td>",$x[5],"</td></h3>
+        </tr>
+        <tr>
+        <h3><th>CVV:</th><td>",$x[6],"</td></h3>
         </tr>
         <tr> 
-        <h3><th>City:</th><td>",$x[6],"</td></h3>
+        <h3><th>Billing Address:</th><td>",$x[7],"</td></h3>
         </tr>
         <tr> 
-        <h3><th>Province:</th><td>",$x[7],"</td></h3>
+        <h3><th>City:</th><td>",$x[8],"</td></h3>
         </tr>
         <tr> 
-        <h3><th>Country:</th><td>",$x[8],"</td></h3>
+        <h3><th>Province:</th><td>",$x[9],"</td></h3>
         </tr>
         <tr> 
-        <h3><th>Postal Code:</th><td>",$x[9],"</td></h3>
+        <h3><th>Country:</th><td>",$x[10],"</td></h3>
+        </tr>
+        <tr> 
+        <h3><th>Postal Code:</th><td>",$x[11],"</td></h3>
         </tr>
         </table>";
         echo "<p class='custheading'>Customer Billing Information</p>";
@@ -81,28 +88,30 @@
         <h3><th>Credit Card:</th><td>",print($masked),"</td></h3>
         </tr>
         <tr> 
-        <h3><th>Billing Address:</th><td>",$x[5],"</td></h3>
+        <h3><th>Expiry Date</th><td>",$x[5],"</td></h3>
         </tr>
         <tr> 
-        <h3><th>City:</th><td>",$x[6],"</td></h3>
+        <h3><th>CVV:</th><td>",$x[6],"</td></h3>
         </tr>
         <tr> 
-        <h3><th>Province:</th><td>",$x[7],"</td></h3>
+        <h3><th>Billing Address:</th><td>",$x[7],"</td></h3>
         </tr>
         <tr> 
-        <h3><th>Country:</th><td>",$x[8],"</td></h3>
+        <h3><th>City:</th><td>",$x[8],"</td></h3>
         </tr>
         <tr> 
-        <h3><th>Postal Code:</th><td>",$x[9],"</td></h3>
+        <h3><th>Province:</th><td>",$x[9],"</td></h3>
+        </tr>
+        <tr> 
+        <h3><th>Country:</th><td>",$x[10],"</td></h3>
+        </tr>
+        <tr> 
+        <h3><th>Postal Code:</th><td>",$x[11],"</td></h3>
         </tr>
         </table>";
         
     }
-    echo"<a href='confirm.php'>
-            <div class='submitbutton'>
-                <input type='submit' name ='confirm' value='Confirm' id='confirm'>
-            </div>"
-        </a>
+
     mysqli_close($db);
 ?>
 </body>
