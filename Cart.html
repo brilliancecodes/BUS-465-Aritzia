@@ -3,18 +3,34 @@
 <head>
 <link rel="stylesheet" href="AritziaStyleSheet.css"/>
 <title>Cart</title>
+<script type="text/javascript">
+    function select()
+    {
+     var1=document.getElementById("radio1");
+     var2=document.getElementById("radio2");
+     if(var1.checked==true)
+     {
+        document.myform.action="Delivery.html";
+     }
+     else if (var2.checked==true)
+     {
+        document.myform.action="Location.php";
+     }
+	}
+  </script>
 </head>
 
 <body>
-<form>
+
+<form action="" method="POST" name="myform" onsubmit="select()">
 <h1>My Cart</h1>
 <div class="split left">
   <div>
-	<img id="image" style="float:left;height:300px;">
-	&nbsp;&nbsp;&nbsp;<span id="item"></span>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Size <span id="size"></span>, <span id="colour"></span>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Qty: <span id="quantity"></span>
-	<br>&nbsp;&nbsp;&nbsp;$<span id="price"></span>
+	<img id="image" style="float:left;height:300px;" src="<?php session_start(); echo $_SESSION['image'] ?>">
+	&nbsp;&nbsp;&nbsp;<span><?php session_start(); echo $_SESSION['item'] ?></span>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Size <span><?php $size = $_POST['size']; echo $size ?></span>, <span><?php $colour = $_POST['colour']; echo $colour ?></span>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Qty: <span><?php $quantity = $_POST['quantity']; echo $quantity ?></span>
+	<br>&nbsp;&nbsp;&nbsp;$<span><?php $price = $_SESSION['price']; echo $price ?></span>
 	<br><br>&nbsp;&nbsp;&nbsp;
   </div>
 </div>
@@ -24,17 +40,17 @@
     Order Summary
 	<table border=1 style="border:1px">
 	<tr>
-	<td>Subtotal: $<span id="subtotal"></span></td>
+	<td>Subtotal: $<span><?php $subtotal = $price*$quantity; echo $subtotal ?></span></td>
 	</tr>
 	<tr>
-	<td>Taxes: $<span id="taxes"></span></td>
+	<td>Taxes: $<span><?php $taxes = $subtotal*0.12; echo $taxes ?></span></td>
 	</tr>
 	<tr>
-	<td>Total: $<span id="total"></span></td>
+	<td>Total: $<span><?php $total = $taxes + $subtotal; echo $total ?></span></td>
 	</tr>
 	<tr>
-	<td><input type="radio" name="checkout" value="deliver">Deliver
-	<br><input type="radio" name="checkout" value="pickup">Pick-up In-store
+	<td><input type="radio" id="radio1" name="checkout" value="deliver">Deliver
+	<br><input type="radio" id="radio2" name="checkout" value="pickup">Pick-up In-store
 	<br>
 	<br><input type="submit" value="Checkout"></td>
 	</tr>
@@ -42,30 +58,13 @@
   </div>
 </div>
 
-<script type="text/javascript">
-function getParameterByName(name, url = window.location.href) {
-    name = name.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
-document.getElementById("image").src = getParameterByName('image');
-document.getElementById("item").innerHTML = getParameterByName('item');
-document.getElementById("price").innerHTML = getParameterByName('price');
-var subtotal = getParameterByName('price')*getParameterByName('quantity');
-document.getElementById("subtotal").innerHTML = parseFloat(subtotal).toFixed(2);
-var taxrate = 0.12;
-var taxes = getParameterByName('price')*getParameterByName('quantity')*taxrate;
-document.getElementById("taxes").innerHTML = parseFloat(taxes).toFixed(2);
-var total = getParameterByName('price')*getParameterByName('quantity')*(1+taxrate);
-document.getElementById("total").innerHTML = parseFloat(total).toFixed(2);
-document.getElementById("size").innerHTML = getParameterByName('size');
-document.getElementById("colour").innerHTML = getParameterByName('colour');
-document.getElementById("quantity").innerHTML = getParameterByName('quantity');
-
-</script>
+<?php
+session_start();
+$_SESSION['size']=$size;
+$_SESSION['colour']=$colour;
+$_SESSION['quantity']=$quantity;
+$_SESSION['total']=$total;
+?>
 </form>
 </body>
 </html>
