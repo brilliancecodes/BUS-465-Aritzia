@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Aritzia's Login Page</title>
-    <link rel="stylesheet" href="AritziaStyleSheet.css" />
+    <link rel="stylesheet" href="AritziaStyleSheet.css?v=<?php echo time(); ?>">
 	<h1><img id = "aritzia", 
 		src="https://www.aritzia.com/on/demandware.static/Sites-Aritzia_CA-Site/-/default/dw29c878d3/images/aritzia_skin/aritzia_logo.svg"> 
 	</h1>
@@ -28,5 +28,8 @@
 			<input type="submit" name="register" value="Register" id="submit"> 
 		</div>
 	</a>
+<?php session_start();
+$_SESSION['location']=$_POST['location'];
+?>
 </body>
-</html>		
+</html>
