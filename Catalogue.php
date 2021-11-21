@@ -7,9 +7,10 @@
 
 <body>
 <h1>Catalogue</h1>
-<form action="Cart.html" method="GET">
-	<img style="float:left;height:600px;" src ="https://aritzia.scene7.com/is/image/Aritzia/medium/f21_04_a05_83755_1274_on_a.jpg">
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>The New Cocoon Long Coat</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$378
+<form action="Cart.php" method="POST">
+<!-- Item image and name would come from a catalogue page full of products. Customer would pick their option and have it POST to this page. -->
+	<img style="float:left;height:600px;" src="<?php $image="https://aritzia.scene7.com/is/image/Aritzia/medium/f21_04_a05_83755_1274_on_a.jpg"; echo $image ?>">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><?php $item="The New Cocoon Long Coat"; echo $item ?></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$<?php $price=378; echo $price ?>
 	<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Colour: <select name="colour" size=1>
 	<option value="White">White
 	<option value="Black">Black
@@ -22,9 +23,12 @@
 	</select>
 	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quantity: <input type="text" size=1 value="1" name="quantity">
     <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Proceed to Cart"/>
-	<input type="hidden" name="price" value="378"/>
-	<input type="hidden" name="item" value="The New Cocoon Long Coat"/>
-	<input type="hidden" name="image" value="https://aritzia.scene7.com/is/image/Aritzia/medium/f21_04_a05_83755_1274_on_a.jpg"/>
+    <?php
+    session_start();
+    $_SESSION['item']=$item;
+    $_SESSION['image']=$image;
+    $_SESSION['price']=$price;
+    ?>
 </form>
 </body>
 </html>
