@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<form action="aritziaregister.php" id="aritziaregister" method="POST" onSubmit="return registerValidate(this);">
+<form action="newaritziaregister.php" id="aritziaregister" method="POST" onSubmit="return registerValidate(this);">
 
 <script type="text/javascript">
 function registerValidate(frm){
@@ -38,28 +38,85 @@ if(frm.country.value == ""){ alert('A country is required to be stored on file f
 if(frm.postalcode.value == ""){ alert('A postal code is required to be stored on file for future purchases.'); frm.postalcode.focus(); return false; }
 return true;}
 
+function autofill(){
+
+document.getElementById("firstname").value="Truffle";
+document.getElementById("lastname").value="Wang";
+document.getElementById("email").value="truffle@hotmail.com";
+document.getElementById("password").value="truffle";
+document.getElementById("confirmpassword").value="truffle";
+document.getElementById("creditcard").value="4444555566667777";
+document.getElementById("expiry").value="08/26";
+document.getElementById("cvv").value="826";
+document.getElementById("billingaddress").value="18 Water Street";
+document.getElementById("city").value="Vancouver";
+document.getElementById("province").value="BC";
+document.getElementById("country").value="Canada";
+document.getElementById("postalcode").value="V5P1E8";
+}
 </script>
 
 <h2 class="heading2">Please enter all information to store on file for login and purchases</h2>
+<h2 class="heading3">
 <table class="registertable"> 
-<tr><td><h5> First Name: </h5></td><td><input name="firstname" type="text" maxlength="15" class="registerinput"/></td></tr>
-<tr><td><h5> Last Name: </h5></td><td><input name="lastname" type="text" maxlength="15" class="registerinput"/></td></tr>
-<tr><td><h5> Email: </h5></td><td><input name="email" type="email" maxlength="40" class="registerinput"/></td></tr>
-<tr><td><h5> Password: </h5></td><td><input name="password" type="password" maxlength="12" class="registerinput"/></td></tr>
-<tr><td><h5> Confirm Password: </h5></td><td><input name="confirmpassword" type="password" maxlength="12" class="registerinput"/></td></tr>
-<tr><td><h5> Credit Card: </h5></td><td><input name="creditcard" type="number" maxlength="16" class="registerinput"/></td></tr>
-<tr><td><h5> Expiry Date: </h5></td><td><input name="expiry" type="text" pattern="(?:0[1-9]|1[0-2])/[0-9]{2}" maxlength="5" class="registerinput"/></td></tr>
-<tr><td><h5> CVV: </h5></td><td><input name="cvv" type="number" maxlength="10" class="registerinput"/></td></tr>
-<tr><td><h5> Billing Address: </h5></td><td><input name="billingaddress" type="text" maxlength="50" class="registerinput"/></td></tr>
-<tr><td><h5> City: </h5></td><td><input name="city" type="text" maxlength="30" class="registerinput"/></td></tr>
-<tr><td><h5> Province: </h5></td><td><input name="province" type="text" maxlength="2" class="registerinput"/></td></tr>
-<tr><td><h5> Country: </h5></td><td><input name="country" type="text" maxlength="20" class="registerinput"/></td></tr>
-<tr><td><h5> Postal Code</h5></td><td><input name="postalcode" type="text" maxlength="30" class="registerinput" pattern="\d{5}(?:-\d{4})?|[a-zA-Z]\d[a-zA-Z] ?\d[a-zA-Z]\d"/></td></tr>
-<tr><td>
-<input class="submit"type="button" value="Cancel" onClick="location.href='aritzia login page.html';" />
-<input class="submit" type="reset" value="Reset" />  
-<input class="submit" type="submit" value="Register" onClick="return registerValidate(this)"/>
-<input class ="submit" type="button" value="Autofill for testing" onClick="autofill();" style="width:100%"/>
+<tr>
+	<td><label for="firstname"><h5> First Name: </h5></label></td>
+	<td><input name="firstname" id="firstname" type="text" maxlength="15" class="registerinput"/></td>
+</tr>
+<tr>
+	<td><label for="lastname"><h5> Last Name: </h5></label></td>
+	<td><input name="lastname" id="lastname" type="text" maxlength="15" class="registerinput"/></td>
+</tr>
+<tr>
+	<td><label for="email"><h5> Email: </h5></label></td>
+	<td><input name="email" id="email" type="email" maxlength="40" class="registerinput"/></td>
+</tr>
+<tr>
+	<td><label for="password"><h5> Password: </h5></label></td>
+	<td><input name="password" id="password" type="password" maxlength="12" class="registerinput"/></td>
+</tr>
+<tr>
+	<td><label for="confirmpassword"><h5> Confirm Password: </h5></label></td>
+	<td><input name="confirmpassword" id="confirmpassword" type="password" maxlength="12" class="registerinput"/></td>
+</tr>
+<tr>
+	<td><label for="creditcard"><h5> Credit Card: </h5></label></td>
+	<td><input name="creditcard" id="creditcard" type="number" maxlength="16" class="registerinput"/></td>
+</tr>
+<tr>
+	<td><label for="expiry"><h5> Expiry Date: </h5></label></td>
+	<td><input name="expiry" id="expiry" type="text" pattern="(?:0[1-9]|1[0-2])/[0-9]{2}" maxlength="5" class="registerinput"/></td>
+</tr>
+<tr>
+	<td><label for="cvv"><h5> CVV: </h5></label></td>
+	<td><input name="cvv" id="cvv" type="number" maxlength="10" class="registerinput"/></td>
+</tr>
+<tr>
+	<td><label for="billingaddress"><h5> Billing Address: </h5></label></td>
+	<td><input name="billingaddress" id="billingaddress" type="text" maxlength="50" class="registerinput"/></td>
+</tr>
+<tr>
+	<td><label for="city"><h5> City: </h5></label></td>
+	<td><input name="city" id="city" type="text" maxlength="30" class="registerinput"/></td>
+</tr>
+<tr>
+	<td><label for="province"><h5> Province: </h5></label></td>
+	<td><input name="province" id="province" type="text" maxlength="2" class="registerinput"/></td>
+</tr>
+<tr>
+	<td><label for="country"><h5> Country: </h5></label></td>
+	<td><input name="country" id="country" type="text" maxlength="20" class="registerinput"/></td>
+</tr>
+<tr>
+	<td><label for="postalcode"><h5> Postal Code</h5></label></td>
+	<td><input name="postalcode" id="postalcode" type="text" maxlength="30" class="registerinput" pattern="\d{5}(?:-\d{4})?|[a-zA-Z]\d[a-zA-Z] ?\d[a-zA-Z]\d"/></td>
+</tr></h2>
+<tr>
+	<td>
+<input class="submit"type="button" value="Cancel" id="submit" onClick="location.href='aritzia login page.php';" /> &nbsp;&nbsp;&nbsp;&nbsp;
+<input class="submit" type="reset" value="Reset" id="submit" /><br><br>
+<input class="submit" type="submit" value="Register" id="submit" onClick="return registerValidate(this)"/>&nbsp;&nbsp;&nbsp;&nbsp;
+<input class ="submit" type="button" value="Autofill for testing" id="submit" onClick="autofill();" />
 </td></tr>
 </table>
 </form>
