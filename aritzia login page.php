@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "datalab3.bus.sfu.ca">
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>Aritzia's Login Page</title>
     <link rel="stylesheet" href="AritziaStyleSheet.css?v=<?php echo time(); ?>">
 	<h1><img id = "aritzia", 
