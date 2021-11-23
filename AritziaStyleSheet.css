@@ -96,6 +96,7 @@ h2.heading3{
 h2.heading4{
     font-family: sans-serif;
     text-align: left;
+    font-weight: normal;
     font-size: medium;
 }
 
@@ -111,6 +112,12 @@ input.registerinput{
     width: 200px;
     height: 20px;
     text-align: center;
+}
+
+input#logout{
+text-align: center;
+float: right;
+font-family: sans-serif;
 }
 
 /* Split the screen in half */
