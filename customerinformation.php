@@ -1,27 +1,30 @@
 <!DOCTYPE html PUBLIC "datalab3.bus.sfu.ca">
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Aritzia's Login Page</title>
-    <link rel="stylesheet" href="AritziaStyleSheet.css" />
-</head>
-<body>
-<h1><img id = "aritzia", 
-            src="https://www.aritzia.com/on/demandware.static/Sites-Aritzia_CA-Site/-/default/dw29c878d3/images/aritzia_skin/aritzia_logo.svg"> 
-            <br><br>
-        <hr>
-        <br><br>
-        <h2 id= "customerlogintitle"> Customer Profile </h2>
-        <br><br>
-        <hr>
-        <br>
-        </h1>
+<title>Aritzia</title>
+    <link rel="stylesheet" href="AritziaStyleSheet.css">
+	<h1><img id = "aritzia", 
+		src="https://www.aritzia.com/on/demandware.static/Sites-Aritzia_CA-Site/-/default/dw29c878d3/images/aritzia_skin/aritzia_logo.svg"> 
+	</h1>
+	<br><br>
+	<hr>
+	<br><br>
+	<h2 id= "customerlogintitle"> Customer Information Page </h2>
+	<br><br>
+	<hr>
+	<br>
+	<a href="logout.php"> <input type="submit" id="logout" style="float: right; margin-top: 0px;" value="Logout"></a>
 
 
 <?php
     session_start();
-    echo"<div>logged in user:</div>";
-    echo $_SESSION['user'];
+    if (isset($_SESSION['login']) && $_SESSION['login'] == TRUE) {
+        echo "<h2 class='heading4'>Logged in user: ",$_SESSION['user'];
+    }
+    else { 
+        echo "<h2 class='heading4'>Please click <a href='aritzia login page.php'>here</a> to log in.</h2>";
+        exit();
+    }
 
     $db = mysqli_connect("localhost", "hwa134", "Q968EhWeHbBFc74LfZtsdYXrG");
     if (!$db) { die("Connection failed: " .mysqli_connect_error()); }
@@ -35,8 +38,9 @@
         $x=mysqli_fetch_row($result);
         $number = $x[4];
         $masked = str_pad(substr($number,-3), strlen($number), '*', STR_PAD_LEFT);
-        echo "<p class='custheading'>Customer Shipping Information</p>";
+        echo "<h2 class='heading2'>Customer Shipping Information</h2>";
         echo "
+        <h2 class='heading3'>
         <table style='border: 1px solid black;margin-left:auto;margin-right:auto;'>
         <tr> 
         <h3><th>First Name:</th><td>",$x[0],"</td></h3>
@@ -71,9 +75,11 @@
         <tr> 
         <h3><th>Postal Code:</th><td>",$x[11],"</td></h3>
         </tr>
-        </table>";
-        echo "<p class='custheading'>Customer Billing Information</p>";
+        </table>
+        </h2>";
+        echo "<h2 class='heading2'>Customer Billing Information</h2>";
         echo "
+        <h2 class='heading3'>
         <table style='border: 1px solid black;margin-left:auto;margin-right:auto;'>
         <tr> 
         <h3><th>First Name:</th><td>",$x[0],"</td></h3>
@@ -108,7 +114,9 @@
         <tr> 
         <h3><th>Postal Code:</th><td>",$x[11],"</td></h3>
         </tr>
-        </table>";
+        </table>
+        </h2>";
+        echo '<div class="submitbutton"><a href = "cartsummary.php"><input type="submit" name="confirmationpage" value="Cart Summary" id="submit"></a>';
         
     }
 
