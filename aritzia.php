@@ -25,7 +25,7 @@
 		 
 	 	if($count == 1){
 			echo "<p>Successfully logged in!</p>";
-			$_SESSION["login"]=1; 
+			$_SESSION["login"]=TRUE; 
 			$_SESSION['user']=$email;
 			header("Location: customerinformation.php?$email");
 		}
