@@ -120,6 +120,16 @@ float: right;
 font-family: sans-serif;
 }
 
+table.one {
+    float:left;
+    width:45%;
+}
+
+table.two   {
+    width:45%;
+    float:right;
+}
+
 /* Split the screen in half */
 .split {
   height: 100%;
