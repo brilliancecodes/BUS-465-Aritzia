@@ -1,7 +1,6 @@
 <!DOCTYPE html PUBLIC "datalab3.bus.sfu.ca">
 <html>
 <head>
-	<meta charset="utf-8">
 	<title>Aritzia's Login Page</title>
     <link rel="stylesheet" href="AritziaStyleSheet.css?v=<?php echo time(); ?>">
 	<h1><img id = "aritzia", 
@@ -23,7 +22,7 @@
 			<input type="submit" name="submit" value="Sign In" id="submit">
 		</p>
 	</form>
-	<a href = "aritziaregister.html">
+	<a href = "aritziaregisterpage.php">
 		<div class= "submitbutton">
 			<input type="submit" name="register" value="Register" id="submit"> 
 		</div>
