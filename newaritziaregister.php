@@ -3,10 +3,12 @@
 <head>
 	<title>Aritzia's Registration Page</title>
     <link rel="stylesheet" href="AritziaStyleSheet.css">
-	<h1><img id = "aritzia", 
+	<h1>
+        <br>
+        <img id = "aritzia", 
 		src="https://www.aritzia.com/on/demandware.static/Sites-Aritzia_CA-Site/-/default/dw29c878d3/images/aritzia_skin/aritzia_logo.svg"> 
+        <br>
 	</h1>
-	<br><br>
 	<hr>
 	<br><br>
 	<h2 id= "customerlogintitle"> Registration </h2>
@@ -25,8 +27,6 @@ if(!isset($_SESSION["user"]))$_SESSION["user"]='0';
 
 $db = mysqli_connect("localhost", "hwa134", "Q968EhWeHbBFc74LfZtsdYXrG", "AritziaDB");
 if (!$db) { die("Connection failed: " .mysqli_connect_error()); }
-
-
 
 if(isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["email"]) && isset($_POST["password"])
 	&& isset($_POST["creditcard"]) && isset($_POST["expiry"]) && isset($_POST["cvv"]) && isset($_POST["billingaddress"])

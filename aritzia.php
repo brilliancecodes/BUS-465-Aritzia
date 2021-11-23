@@ -22,7 +22,7 @@
 		$result = mysqli_query($db, $query);
 
 		$count = mysqli_num_rows($result);
-		 
+		 	
 	 	if($count == 1){
 			echo "<p>Successfully logged in!</p>";
 			$_SESSION["login"]=TRUE; 

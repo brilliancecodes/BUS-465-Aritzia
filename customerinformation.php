@@ -3,10 +3,12 @@
 <head>
 <title>Aritzia</title>
     <link rel="stylesheet" href="AritziaStyleSheet.css">
-	<h1><img id = "aritzia", 
+	<h1>
+        <br>
+        <img id = "aritzia", 
 		src="https://www.aritzia.com/on/demandware.static/Sites-Aritzia_CA-Site/-/default/dw29c878d3/images/aritzia_skin/aritzia_logo.svg"> 
+        <br>
 	</h1>
-	<br><br>
 	<hr>
 	<br><br>
 	<h2 id= "customerlogintitle"> Customer Information Page </h2>
@@ -51,17 +53,8 @@
         <tr> 
         <h3><th>Email:</th><td>",$x[2],"</td></h3>
         </tr>
-        <tr>
-        <h3><th>Credit Card:</th><td>",print($masked),"</td></h3>
-        </tr>
-        <tr>
-        <h3><th>Expiry Date:</th><td>",$x[5],"</td></h3>
-        </tr>
-        <tr>
-        <h3><th>CVV:</th><td>",$x[6],"</td></h3>
-        </tr>
         <tr> 
-        <h3><th>Billing Address:</th><td>",$x[7],"</td></h3>
+        <h3><th>Shipping Address:</th><td>",$x[7],"</td></h3>
         </tr>
         <tr> 
         <h3><th>City:</th><td>",$x[8],"</td></h3>
