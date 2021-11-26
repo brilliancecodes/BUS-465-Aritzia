@@ -30,6 +30,7 @@ input#submit{
     width: 200px;
     height: 50px;
     font-size: 13pt;
+
     }
 
 #aa{
@@ -114,39 +115,12 @@ input.registerinput{
     text-align: center;
 }
 
-input#logout{
-text-align: center;
-float: right;
-font-family: sans-serif;
+div.container{
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-table.one {
-    float:left;
-    width:45%;
-}
-
-table.two   {
-    width:45%;
-    float:right;
-}
-
-/* Split the screen in half */
-.split {
-  height: 100%;
-  width: 50%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 100px;
-}
-
-/* Control the left side */
-.left {
-  left: 0;
-}
-
-/* Control the right side */
-.right {
-  right: 0;
+p.tablefont{
+    font-family: sans-serif;
+    font-size: medium;
 }
