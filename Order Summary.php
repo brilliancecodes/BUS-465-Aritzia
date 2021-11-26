@@ -32,23 +32,53 @@ if (!$db) { die("Connection failed: " .mysqli_connect_error()); }
 
 mysqli_select_db($db, 'AritziaDB');
 
+$query = "SELECT * FROM customerlogin WHERE email = '$email';";
+
+
+
+$result = mysqli_query($db, $query);
+
+$x=mysqli_fetch_row($result);
+
 ?>
 
 <h1> Pick-up Details </h1>
 
-
+<div>
 <table id="myTable" class="display" cellspacing="0" width="100%">
 <thead>
 <tr>
-<th>Order Id</th>
-<th>Customer First Name</th>
-<th> Customer Last Name </th>
-<th> Email Address </th>
+<td>Order Id:</td>
+<td>	</td>
+</tr>
+
+<tr>
+<td>Customer Name:</td>
+<td>					</td>
+</tr>
+
+<tr>
+<td> Customer Last Name: </td>
+<td>					</td>
+</tr>
+
+<tr>
+<td> Email Address: </td>
+<td>				</td>
+</tr>
+
+
+<tr>
+<td> Location: </td>
+<td> 			</td>
+</tr>
+
+
+</div>
 <tbody>
 <?php
-$query = "SELECT * FROM orders
-WHERE email = '$_SESSION['user']' 
-Limit 1";
+
+$query = "SELECT * FROM orders ";
 
 $result = mysqli_query($db, $query);
 
@@ -64,7 +94,7 @@ while($row = mysqli_fetch_row($result)) {
  mysqli_close($connect);
 ?>
 </tbody>
-<th>Pick-up Location: $<span><?php session_start(); echo $_SESSION['Location'] ?></span> </th>
+<th>Pick-up Location: </th>
 <tbody>
 </tr>
 </thead>
