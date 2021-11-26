@@ -69,82 +69,67 @@ $x=mysqli_fetch_row($result);
 
 
 <tr>
-<td> Location: </td>
+<td> Location </td>
 <td> 			</td>
 </tr>
 
 
 </div>
-<tbody>
-<?php
 
-$query = "SELECT * FROM orders ";
-
-$result = mysqli_query($db, $query);
-
-while($row = mysqli_fetch_row($result)) {
-	
-	echo "<tr>";
-	foreach($row as $cell=>$singledata)
-		echo "<td>$singledata</td>"."  ";
-		
-	echo "</tr>\n";
-	}
-
- mysqli_close($connect);
-?>
-</tbody>
-<th>Pick-up Location: </th>
-<tbody>
 </tr>
 </thead>
+</table>
 
 <h1> Item(s) </h1>
-
 <table id="myTable" class="display" cellspacing="0" width="100%">
-<thead>
+
 <tr>
-<th>Item: $<span><?php session_start(); echo $_SESSION['item'] ?></span> </th>
-<th>Size: $<span><?php session_start(); echo $_SESSION['size'] ?></span>
-<th>Colour: $<span><?php session_start(); echo $_SESSION['colour'] ?></span></th>
-<th> Quantity: $<span><?php session_start(); echo $_SESSION['quantity'] ?></span></th>
-<tbody>
+<td>Item:</td>
+<td>	</td>
 </tr>
-</thead>
+
+<tr>
+<td>Size:</td>
+<td>					</td>
+</tr>
+
+<tr>
+<td> Colour: </td>
+<td>					</td>
+</tr>
+
+<tr>
+<td> Quantity: </td>
+<td>				</td>
+</tr>
+
+</table>
+
 
 <h1> Payment Information </h1>
-
 <table id="myTable" class="display" cellspacing="0" width="100%">
-<thead>
 <tr>
-
-<th>Total: $<span><?php session_start(); echo $_SESSION['total'] ?></span> </th>
-
-<th>Credit Card Number</th>
-<th>Billing Address </th>
-<tbody>
-<?php
-$query = "SELECT * FROM orders";
-
-$result = mysqli_query($db, $query);
-
-while($row = mysqli_fetch_row($result)) {
-	
-	echo "<tr>";
-	foreach($row as $cell=>$singledata)
-		echo "<td>$singledata</td>"."  ";
-		
-	echo "</tr>\n";
-	}
-
- mysqli_close($connect);
-?>
-</tbody>
-
-
-</tbody>
+<td>Total:</td>
+<td>	</td>
 </tr>
+
+<tr>
+<td>Credit Card Number:</td>
+<td>					</td>
+</tr>
+
+<tr>
+<td> Billing Address: </td>
+<td>					</td>
+</tr>
+
+<tr>
+<td> Quantity: </td>
+<td>				</td>
+</tr>
+
 </thead>
+</table>
 
 
 
@@ -161,72 +146,7 @@ while($row = mysqli_fetch_row($result)) {
 
 
 
-<tbody>
 
-<?php
-$query = "SELECT * FROM orders";
-
-$result = mysqli_query($db, $query);
-
-while($row = mysqli_fetch_row($result)) {
-	
-	echo "<tr>";
-	foreach($row as $cell=>$singledata)
-		echo "<td>$singledata</td>"."  ";
-		
-	echo "</tr>\n";
-	
-	
-	}
-
- mysqli_close($connect);
-
-
-?>
-
-</tbody>
-
-
-
-	<img id="image" style="float:left;height:300px;" src="<?php session_start(); echo $_SESSION['image'] ?>">
-	&nbsp;&nbsp;&nbsp;<span><?php session_start(); echo $_SESSION['item'] ?></span>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Size <span><?php $size = $_POST['size']; echo $size ?></span>, <span><?php $colour = $_POST['colour']; echo $colour ?></span>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Qty: <span><?php $quantity = $_POST['quantity']; echo $quantity ?></span>
-	<br>&nbsp;&nbsp;&nbsp;$<span><?php $price = $_SESSION['price']; echo $price ?></span>
-	<br><br>&nbsp;&nbsp;&nbsp;
-  </div>
-</div>
-
-<div class="split right">
-  <div>
-    Order Summary
-	<table border=1 style="border:1px">
-	<tr>
-	<td>Subtotal: $<span><?php $subtotal = $price*$quantity; echo $subtotal ?></span></td>
-	</tr>
-	<tr>
-	<td>Taxes: $<span><?php $taxes = $subtotal*0.12; echo $taxes ?></span></td>
-	</tr>
-	<tr>
-	<td>Total: $<span><?php $total = $taxes + $subtotal; echo $total ?></span></td>
-	</tr>
-	<tr>
-	<td><input type="radio" id="radio1" name="checkout" value="deliver">Deliver
-	<br><input type="radio" id="radio2" name="checkout" value="pickup">Pick-up In-store
-	<br>
-	<br><input type="submit" value="Checkout"></td>
-	</tr>
-	</table>
-  </div>
-</div>
-
-<?php
-session_start();
-$_SESSION['size']=$size;
-$_SESSION['colour']=$colour;
-$_SESSION['quantity']=$quantity;
-$_SESSION['total']=$total;
-?>
 </form>
 </body>
 </html>
