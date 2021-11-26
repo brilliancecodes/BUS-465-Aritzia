@@ -36,8 +36,7 @@
 <body>
 
 <form action="" method="POST" name="myform" onsubmit="select()">
-<h1>My Cart</h1>
-<div class="split left">
+<div>
   <div>
 	<img id="image" style="float:left;height:300px;" src="<?php session_start(); echo $_SESSION['image'] ?>">
 	&nbsp;&nbsp;&nbsp;<span><?php session_start(); echo $_SESSION['item'] ?></span>
@@ -48,8 +47,9 @@
   </div>
 </div>
 
-<div class="split right">
-  <div>
+<div class="contant">
+
+  <div class="out">
     Order Summary
 	<table border=1 style="border:1px">
 	<tr>
