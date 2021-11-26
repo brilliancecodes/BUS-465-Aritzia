@@ -38,7 +38,7 @@ $result3 = mysqli_query($db, $query3);
 
 mysqli_close($db);
 
-header("Location: Order Summary.html");
+header("Location: Order Summary.php");
 
 ?>
 </body>
