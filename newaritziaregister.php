@@ -28,21 +28,21 @@ if(!isset($_SESSION["user"]))$_SESSION["user"]='0';
 $db = mysqli_connect("localhost", "hwa134", "Q968EhWeHbBFc74LfZtsdYXrG", "AritziaDB");
 if (!$db) { die("Connection failed: " .mysqli_connect_error()); }
 
-if(isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["email"]) && isset($_POST["password"])
-	&& isset($_POST["creditcard"]) && isset($_POST["expiry"]) && isset($_POST["cvv"]) && isset($_POST["billingaddress"])
-	&& isset($_POST["city"]) && isset($_POST["province"]) && isset($_POST["country"]) && isset($_POST["postalcode"])){
-		$firstname=$_POST["firstname"];
-		$lastname=$_POST["lastname"];
-		$email=$_POST["email"];
-		$password=$_POST["password"];
-		$creditcard=$_POST["creditcard"];
-		$expiry=$_POST["expiry"];
-		$cvv=$_POST["cvv"];
-		$billingaddress=$_POST["billingaddress"];
-		$city=$_POST["city"];
-		$province=$_POST["province"];
-		$country=$_POST["country"];
-		$postalcode=$_POST["postalcode"];
+if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['email']) && isset($_POST['password'])
+	&& isset($_POST['creditcard']) && isset($_POST['expiry']) && isset($_POST['cvv']) && isset($_POST['billingaddress'])
+	&& isset($_POST['city']) && isset($_POST['province']) && isset($_POST['country']) && isset($_POST['postalcode'])){
+		$firstname=$_POST['firstname'];
+		$lastname=$_POST['lastname'];
+		$email=$_POST['email'];
+		$password=$_POST['password'];
+		$creditcard=$_POST['creditcard'];
+		$expiry=$_POST['expiry'];
+		$cvv=$_POST['cvv'];
+		$billingaddress=$_POST['billingaddress'];
+		$city=$_POST['city'];
+		$province=$_POST['province'];
+		$country=$_POST['country'];
+		$postalcode=$_POST['postalcode'];
 		$sql="SELECT * from customerlogin WHERE email='$email'";
 		$result=mysqli_query($db,$sql);
 		if (mysqli_num_rows($result)>0){
