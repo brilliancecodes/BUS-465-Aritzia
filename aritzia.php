@@ -33,7 +33,7 @@
 		else{
 			$_Session["login"]=0;
 			$_SESSION["email"]='0';
-			echo "<p>Sorry, the email or password is incorrect. Click <a href='https://datalab3.bus.sfu.ca/hwa134/aritzia%20login%20page.html'>here to go back to Homepage</a>";
+			echo "<p>Sorry, the email or password is incorrect. Click <a href='https://datalab3.bus.sfu.ca/hwa134/aritzia%20login%20page.php'>here to go back to Homepage</a>";
 			//echo "<br>For testing purpose, value of count=",$count;
 			
 			
