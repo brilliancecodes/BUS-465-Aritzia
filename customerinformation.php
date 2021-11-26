@@ -42,7 +42,7 @@
         $masked = str_pad(substr($number,-3), strlen($number), '*', STR_PAD_LEFT);
         echo "<h2 class='heading2'>Customer Shipping Information</h2>";
         echo "
-        <h2 class='heading3'>
+        <p class='tablefont'>
         <table style='border: 1px solid black;margin-left:auto;margin-right:auto;'>
         <tr> 
         <h3><th>First Name:</th><td>",$x[0],"</td></h3>
@@ -69,10 +69,10 @@
         <h3><th>Postal Code:</th><td>",$x[11],"</td></h3>
         </tr>
         </table>
-        </h2>";
+        </p>";
         echo "<h2 class='heading2'>Customer Billing Information</h2>";
         echo "
-        <h2 class='heading3'>
+        <p class='tablefont'>
         <table style='border: 1px solid black;margin-left:auto;margin-right:auto;'>
         <tr> 
         <h3><th>First Name:</th><td>",$x[0],"</td></h3>
@@ -108,7 +108,7 @@
         <h3><th>Postal Code:</th><td>",$x[11],"</td></h3>
         </tr>
         </table>
-        </h2>";
+        </p>";
         echo '<div class="submitbutton"><a href = "cartsummary.php"><input type="submit" name="confirmationpage" value="Cart Summary" id="submit"></a>';
         
     }
