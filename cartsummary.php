@@ -66,7 +66,6 @@ $masked = str_pad(substr($number,-3), strlen($number), '*', STR_PAD_LEFT);
 	</tr>
 </table>
 </div>
-
 </div>
 <div style='width:610px;height:auto;position:relative;'>
 <table style='float: left; margin-right:10px; display:inline:block; padding-inline-start: 20%;'>
@@ -95,7 +94,6 @@ $masked = str_pad(substr($number,-3), strlen($number), '*', STR_PAD_LEFT);
 		<h3><th>Postal Code:</th><td>",$x[11],"</td></h3>
 		</tr>
 	</table>
-
 	<table>
 		<tr> 
 		<h3><th>Pickup Location</th><td>",$location,"</td></h3>
@@ -149,7 +147,7 @@ echo "
 </table>";
 
 echo '<div class="submitbutton"><a href = "orderconfirm.php"><input type="submit" name="finalconfirmation" value="Confirm Order" id="submit"></a>';
-
+echo '<div class="submitbutton"><a href = "Catalogue.php"><input type="submit" name="backtocatalogue" value="Back to Catalogue" id="submit"></a>';
 mysqli_close($db);
 
 
