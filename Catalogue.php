@@ -20,7 +20,6 @@
 </head>
 
 <body>
-<h1>Catalogue</h1>
 <form action="Cart.php" method="POST">
 <!-- Item image and name would come from a catalogue page full of products. Customer would pick their option and have it POST to this page. -->
 	<img style="float:left;height:600px;" src="<?php $image="https://aritzia.scene7.com/is/image/Aritzia/medium/f21_04_a05_83755_1274_on_a.jpg"; echo $image ?>">
