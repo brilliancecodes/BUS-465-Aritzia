@@ -27,7 +27,8 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == TRUE) {
     echo "<a href='logout.php'> <input type='submit' id='logout' style='float: right; margin-top: 0px;' value='Logout'></a>";
     }
 else{
-    echo"not logged in";
+/*     testing purposes
+       echo"not logged in"; */
 }
 
 $item=$_SESSION['item'];

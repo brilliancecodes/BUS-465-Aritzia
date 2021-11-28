@@ -14,7 +14,6 @@
 	<h2 id= "customerlogintitle"> Customer Information Page </h2>
 	<br><br>
 	<hr>
-	<br>
 	<a href="logout.php"> <input type="submit" id="logout" style="float: right; margin-top: 0px;" value="Logout"></a>
 
 

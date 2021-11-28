@@ -47,6 +47,7 @@
 <form action="" method="POST" name="myform" onsubmit="select()">
 <div>
   <div>
+  <h2 style='font-family: sans-serif; text-align: left; font-weight: normal;font-size: medium;'>
 	<br>
 	<img id="image" style="float:left;height:300px;" src="<?php session_start(); echo $_SESSION['image'] ?>">
 	&nbsp;&nbsp;&nbsp;<span><?php session_start(); echo $_SESSION['item'] ?></span>
@@ -54,12 +55,14 @@
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Qty: <span><?php $quantity = $_POST['quantity']; echo $quantity ?></span>
 	<br>&nbsp;&nbsp;&nbsp;$<span><?php $price = $_SESSION['price']; echo $price ?></span>
 	<br><br>&nbsp;&nbsp;&nbsp;
+	</h2>
   </div>
 </div>
 
 <div class="contant">
 
   <div class="out">
+  <h2 style='font-family: sans-serif; text-align: left; font-weight: normal;font-size: medium;'>
     Order Summary
 	<table border=1 style="border:1px">
 	<tr>
@@ -78,6 +81,7 @@
 	<br><input type="submit" value="Checkout"></td>
 	</tr>
 	</table>
+	</h2>
   </div>
 </div>
 

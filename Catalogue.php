@@ -32,6 +32,7 @@
 <form action="Cart.php" method="POST">
 <!-- Item image and name would come from a catalogue page full of products. Customer would pick their option and have it POST to this page. -->
 	<br>
+	<h2 style='font-family: sans-serif; text-align: left; font-weight: normal;font-size: medium;'>
 	<img style="float:left;height:600px;" src="<?php $image="https://aritzia.scene7.com/is/image/Aritzia/medium/f21_04_a05_83755_1274_on_a.jpg"; echo $image ?>">
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><?php $item="The New Cocoon Long Coat"; echo $item ?></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$<?php $price=378; echo $price ?>
 	<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Colour: <select name="colour" size=1>
@@ -45,7 +46,7 @@
 	<option value="L">L
 	</select>
 	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quantity: <input type="text" size=1 value="1" name="quantity">
-    <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Proceed to Cart"/>
+    <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Proceed to Cart"/> </h2>
     <?php
     $_SESSION['item']=$item;
     $_SESSION['image']=$image;
