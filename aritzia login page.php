@@ -21,10 +21,9 @@
 <?php 
 
 session_start();
-
 if (isset($_SESSION['user']) && $_SESSION['user'] == TRUE) {
-	header('Location: customerinformation.php');
 	if (isset($_SESSION['location']) && $_SESSION['location'] == TRUE) {
+		header('Location: customerinformation.php');
 		/* 	echo "<h2 class='heading4'>The chosen location is: ",$_SESSION['location']; */
 			}
 		else{
