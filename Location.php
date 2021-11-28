@@ -1,35 +1,47 @@
 <html> 
 <head>
+<head>
 	<title>Aritzia's Location</title>
+    <link rel="stylesheet" href="AritziaStyleSheet.css"/>		
     <link rel="stylesheet" href="AritziaStyleSheet.css?v=<?php echo time(); ?>">
-	<h1><img id = "aritzia", 
+	<h1>
+        <br>
+        <img id = "aritzia", 
 		src="https://www.aritzia.com/on/demandware.static/Sites-Aritzia_CA-Site/-/default/dw29c878d3/images/aritzia_skin/aritzia_logo.svg"> 
+        <br>
 	</h1>
-	<br><br>
 	<hr>
 	<br><br>
 	<h2 id= "customerlogintitle"> Location </h2>
 	<br><br>
 	<hr>
-	<br>
 </head>
 
 <body>
+
 <?php
-    session_start();
-    $item=$_SESSION['item'];
-    $colour=$_SESSION['colour'];
-    $size=$_SESSION['size'];
+session_start();
+if (session_id()=="") session_start();
+if (isset($_SESSION['login']) && $_SESSION['login'] == TRUE) {
+    echo "<h2 class='heading4'>Logged in user: ",$_SESSION['user'];
+    echo "<a href='logout.php'> <input type='submit' id='logout' style='float: right; margin-top: 0px;' value='Logout'></a>";
+    }
+else{
+    echo"not logged in";
+}
 
-    $quantity=$_SESSION['quantity'];
+$item=$_SESSION['item'];
+$colour=$_SESSION['colour'];
+$size=$_SESSION['size'];
+$quantity=$_SESSION['quantity'];
 
-    $db = mysqli_connect("localhost", "hwa134", "Q968EhWeHbBFc74LfZtsdYXrG");
-    if (!$db) { die("Connection failed: " .mysqli_connect_error()); }
-    mysqli_select_db($db, "AritziaDB");
+$db = mysqli_connect("localhost", "hwa134", "Q968EhWeHbBFc74LfZtsdYXrG");
+if (!$db) { die("Connection failed: " .mysqli_connect_error()); }
+mysqli_select_db($db, "AritziaDB");
 
-    $query1 = "SELECT * FROM ITEMS
-    WHERE Item_Name='$item' AND Item_Colour='$colour' AND Size='$size';";
-    $result1 = mysqli_query($db, $query1);
+$query1 = "SELECT * FROM ITEMS
+WHERE Item_Name='$item' AND Item_Colour='$colour' AND Size='$size';";
+$result1 = mysqli_query($db, $query1);
 
 /*     if($result1){
         $x=mysqli_fetch_row($result1);
@@ -79,8 +91,8 @@
     echo print_r($locationnames); */
 
 ?>
-<h1 align = center> Aritzia </h1>
-<h2 align = center> Pick-up Location </h2>
+<p style='font-family: sans-serif;text-align: center;font-weight: bold; font-size: 20pt;'> Aritzia </p>
+<h2 style='font-family: sans-serif;text-align: center;font-weight: bold; font-size: 16pt;'>Pick-up Location </h2>
 
 <form method = POST action = "aritzia login page.php" align = center onsubmit="return check();">
 <select name = "location" id = "selected">

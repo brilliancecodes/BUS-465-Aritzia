@@ -40,39 +40,9 @@
         $x=mysqli_fetch_row($result);
         $number = $x[4];
         $masked = str_pad(substr($number,-3), strlen($number), '*', STR_PAD_LEFT);
-        echo "<h2 class='heading2'>Customer Shipping Information</h2>";
-        echo "
-        <p class='tablefont'>
-        <table style='border: 1px solid black;margin-left:auto;margin-right:auto;'>
-        <tr> 
-        <h3><th>First Name:</th><td>",$x[0],"</td></h3>
-        </tr>
-        <tr>
-        <h3><th>Last Name:</th><td>",$x[1],"</td></h3>
-        </tr>
-        <tr> 
-        <h3><th>Email:</th><td>",$x[2],"</td></h3>
-        </tr>
-        <tr> 
-        <h3><th>Shipping Address:</th><td>",$x[7],"</td></h3>
-        </tr>
-        <tr> 
-        <h3><th>City:</th><td>",$x[8],"</td></h3>
-        </tr>
-        <tr> 
-        <h3><th>Province:</th><td>",$x[9],"</td></h3>
-        </tr>
-        <tr> 
-        <h3><th>Country:</th><td>",$x[10],"</td></h3>
-        </tr>
-        <tr> 
-        <h3><th>Postal Code:</th><td>",$x[11],"</td></h3>
-        </tr>
-        </table>
-        </p>";
         echo "<h2 class='heading2'>Customer Billing Information</h2>";
         echo "
-        <p class='tablefont'>
+        <h2 class='heading3'>
         <table style='border: 1px solid black;margin-left:auto;margin-right:auto;'>
         <tr> 
         <h3><th>First Name:</th><td>",$x[0],"</td></h3>
@@ -108,9 +78,9 @@
         <h3><th>Postal Code:</th><td>",$x[11],"</td></h3>
         </tr>
         </table>
-        </p>";
+        </h2>";
         echo '<div class="submitbutton"><a href = "cartsummary.php"><input type="submit" name="confirmationpage" value="Cart Summary" id="submit"></a>';
-        
+        echo '<div class="submitbutton"><a href = "Catalogue.php"><input type="submit" name="backtocatalogue" value="Back to Catalogue" id="submit"></a>';
     }
 
     mysqli_close($db);

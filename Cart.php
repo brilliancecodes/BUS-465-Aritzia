@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	
-		<title>Cart</title>
+<title>Cart</title>
+<link rel="stylesheet" href="AritziaStyleSheet.css"/>		
     <link rel="stylesheet" href="AritziaStyleSheet.css?v=<?php echo time(); ?>">
-	<h1><img id = "aritzia", 
+	<h1>
+        <br>
+        <img id = "aritzia", 
 		src="https://www.aritzia.com/on/demandware.static/Sites-Aritzia_CA-Site/-/default/dw29c878d3/images/aritzia_skin/aritzia_logo.svg"> 
+        <br>
 	</h1>
-	<br><br>
 	<hr>
 	<br><br>
 	<h2 id= "customerlogintitle"> Cart </h2>
 	<br><br>
 	<hr>
-	<br>
-<link rel="stylesheet" href="AritziaStyleSheet.css"/>
-
 <script type="text/javascript">
     function select()
     {
@@ -35,9 +34,20 @@
 
 <body>
 
+<?php
+	session_start();
+    if (session_id()=="") session_start();
+	if (isset($_SESSION['login']) && $_SESSION['login'] == TRUE) {
+		echo "<h2 class='heading4'>Logged in user: ",$_SESSION['user'];
+		echo "<a href='logout.php'> <input type='submit' id='logout' style='float: right; margin-top: 0px;' value='Logout'></a>";
+		}
+
+	?>
+	
 <form action="" method="POST" name="myform" onsubmit="select()">
 <div>
   <div>
+	<br>
 	<img id="image" style="float:left;height:300px;" src="<?php session_start(); echo $_SESSION['image'] ?>">
 	&nbsp;&nbsp;&nbsp;<span><?php session_start(); echo $_SESSION['item'] ?></span>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Size <span><?php $size = $_POST['size']; echo $size ?></span>, <span><?php $colour = $_POST['colour']; echo $colour ?></span>
