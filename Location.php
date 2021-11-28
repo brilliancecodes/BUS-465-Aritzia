@@ -90,21 +90,27 @@
 </select>
 <br>
 
+<script type="text/javascript">
+  document.getElementById('location').value = "<?php echo $_GET['location'];?>";
+</script>
+
 <input type = "submit" name="CheckAvail" value = "Check Availability">
 
-<script type="text/javascript">
-    function check(){
-        var numrows = <?php echo $numrows ?>;
-        var location = <?php echo json_encode($location); ?>;
-        var selected = document.getElementById("selected");
+<?php
+echo"<script type='text/javascript'>";
+echo"function check(){
+        var numrows = ".$numrows.";
+        var location = json_encode($location);
+        var selected = document.getElementById('selected');
         var selected2 = selected.options[selected.selectedIndex].value;
         var i = 0;
         var j = 0;
         while (i<numrows){
             if (selected2 == location[i]){
-                alert("Available at this location. Continue to checkout.");
-                // window.location.href = "Delivery.html";
+                alert('Available at this location. Continue to checkout.');
+                // window.location.href = 'Delivery.html';
                 j=1;
+
             }
             i++
         }
@@ -112,12 +118,12 @@
             return true;
         }
         else{
-            alert("Not available at this location. Select another location.")
+            alert('Not available at this location. Select another location.');
             return false;
         }
-    }
-  </script>
-
+    }";
+echo"</script>";
+?>
 </form>
 
 

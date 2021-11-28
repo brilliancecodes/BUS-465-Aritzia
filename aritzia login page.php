@@ -17,20 +17,46 @@
 	<br>
 </head>
 <body>
-	<form action="aritzia.php" method="POST">
-		<p class = "submitbutton">
-			Email Address: <INPUT TYPE="emailaddress" NAME="email" value= "" id="log1"><br><br>
-			Password: <input type="password" name="password" value="" id="pw1"> <br> <br>
-			<input type="submit" name="submit" value="Sign In" id="submit">
-		</p>
+
+<?php 
+
+session_start();
+
+if (isset($_SESSION['user']) && $_SESSION['user'] == TRUE) {
+	header('Location: customerinformation.php');
+	if (isset($_SESSION['location']) && $_SESSION['location'] == TRUE) {
+		/* 	echo "<h2 class='heading4'>The chosen location is: ",$_SESSION['location']; */
+			}
+		else{
+			$location=$_POST['location'];
+			$_SESSION['location']=$location;
+			echo $_SESSION['location'];
+		}
+}
+else{
+	echo"
+	<form action='aritzia.php' method='POST'>
+	<p class = 'submitbutton'>
+		Email Address: <INPUT TYPE='emailaddress' NAME='email' value= '' id='log1'><br><br>
+		Password: <input type='password' name='password' value='' id='pw1'> <br> <br>
+		<input type='submit' name='submit' value='Sign In' id='submit'>
+	</p>
 	</form>
-	<a href = "aritziaregisterpage.php">
-		<div class= "submitbutton">
-			<input type="submit" name="register" value="Register" id="submit"> 
-		</div>
-	</a>
-<?php session_start();
-$_SESSION['location']=$_POST['location'];
+	<a href = 'aritziaregisterpage.php'>
+	<div class= 'submitbutton'>
+		<input type='submit' name='register' value='Register' id='submit'> 
+	</div>
+	</a>";
+	if (isset($_SESSION['location']) && $_SESSION['location'] == TRUE) {
+		/* 	echo "<h2 class='heading4'>The chosen location is: ",$_SESSION['location']; */
+			}
+		else{
+			$location=$_POST['location'];
+			$_SESSION['location']=$location;
+			echo $_SESSION['location'];
+		}
+}
+
 ?>
 </body>
 </html>
