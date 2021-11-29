@@ -29,7 +29,6 @@ if (isset($_SESSION['user']) && $_SESSION['user'] == TRUE) {
 		else{
 			$location=$_POST['location'];
 			$_SESSION['location']=$location;
-			echo $_SESSION['location'];
 		}
 }
 else{
@@ -52,7 +51,6 @@ else{
 		else{
 			$location=$_POST['location'];
 			$_SESSION['location']=$location;
-			echo $_SESSION['location'];
 		}
 }
 
