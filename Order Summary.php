@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Aritzia</title>
-    <link rel="stylesheet" href="AritziaStyleSheet.css">
+    <link rel="stylesheet" href="AritziaStyleSheet.css?v=<?php echo time(); ?>">
 	<h1>
         <br>
         <img id = "aritzia", 
@@ -24,8 +24,8 @@
 
 <body>
 
-<p align = center > Thank you </p>
-		<p align = center>Pick up order created. Your item(s) will be held for 14 days. Please use the order ID number as reference when picking up in-store </p>
+<p class="display" align = center > Thank you </p>
+		<p class="display" align = center>Pick up order created. Your item(s) will be held for 14 days. Please use the order ID number as reference when picking up in-store </p>
 <?php
 
 	
@@ -47,7 +47,7 @@ mysqli_close($db);
 
 ?>
 
-<h1 align = center> Pick-up Details </h1>
+<h1 class="display" align = center> Pick-up Details </h1>
 
 <div>
 <table id="myTable" class="display" cellspacing="0" width="0%" Border =1 align = center>
@@ -81,7 +81,7 @@ mysqli_close($db);
 </thead>
 </table>
 
-<h1 align = center> Item(s) </h1>
+<h1 class="display" align = center> Item(s) </h1>
 <table id="myTable" class="display" cellspacing="0" width="0%"  Border =1 align = center>
 <thead>
 <tr>
@@ -107,7 +107,7 @@ mysqli_close($db);
 </table>
 
 
-<h1 align = center> Payment Information </h1>
+<h1 class="display" align = center> Payment Information </h1>
 <table id="myTable" class="display" cellspacing="0" width="0%"  Border =1 align = center>
 <thead>
 <tr>
