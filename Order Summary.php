@@ -47,7 +47,7 @@ mysqli_close($db);
 
 ?>
 
-<h1 class="display" align = center> Pick-up Details </h1>
+<h2 class='heading2'>Pick-up Details</h2>
 
 <div>
 <table id="myTable" class="display" cellspacing="0" width="0%" Border =1 align = center>
@@ -70,7 +70,7 @@ mysqli_close($db);
 
 
 <tr>
-<td> Location </td>
+<td> Location: </td>
 <td> <?php echo $x[4]  ?>				</td>
 </tr>
 
@@ -81,7 +81,7 @@ mysqli_close($db);
 </thead>
 </table>
 
-<h1 class="display" align = center> Item(s) </h1>
+<h2 class='heading2'>Item(s)</h2>
 <table id="myTable" class="display" cellspacing="0" width="0%"  Border =1 align = center>
 <thead>
 <tr>
@@ -107,7 +107,7 @@ mysqli_close($db);
 </table>
 
 
-<h1 class="display" align = center> Payment Information </h1>
+<h2 class='heading2'>Payment Information</h2>
 <table id="myTable" class="display" cellspacing="0" width="0%"  Border =1 align = center>
 <thead>
 <tr>
@@ -130,7 +130,7 @@ mysqli_close($db);
 
 </thead>
 </table>
-
+<br>
 
 
 </body>
