@@ -146,7 +146,7 @@ echo "
 </table>";
 
 echo '<div class="submitbutton"><a href = "orderconfirm.php"><input type="submit" name="finalconfirmation" value="Confirm Order" id="submit"></a>';
-echo '<div class="submitbutton"><a href = "Catalogue.php"><input type="submit" name="backtocatalogue" value="Back to Catalogue" id="submit"></a>';
+echo '<div class="submitbutton"><a href = "CatalogueList.php"><input type="submit" name="backtocatalogue" value="Back to Catalogue" id="submit"></a>';
 mysqli_close($db);
 
 

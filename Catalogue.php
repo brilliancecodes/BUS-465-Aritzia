@@ -20,6 +20,9 @@
 
 <body>
 	<?php
+/* 	echo $_GET['item'];
+	echo "<br>";
+	echo $_GET['image']; */
 	session_start();
     if (session_id()=="") session_start();
 	if (isset($_SESSION['login']) && $_SESSION['login'] == TRUE) {
@@ -27,14 +30,30 @@
 		echo "<a href='logout.php'> <input type='submit' id='logout' style='float: right; margin-top: 0px;' value='Logout'></a>";
 		}
 
+	$db = mysqli_connect("localhost", "hwa134", "Q968EhWeHbBFc74LfZtsdYXrG");
+	if (!$db) { die("Connection failed: " .mysqli_connect_error()); }
+	mysqli_select_db($db, "AritziaDB");
+
+	$item=$_GET['item'];
+
+	$query="SELECT * FROM catalogue WHERE item='$item'";
+	$result = mysqli_query($db, $query);
+	$x=mysqli_fetch_row($result);
+
+	$image = $x[1];
+	$price = $x[2];
+
+	mysqli_close($db);
+
 	?>
 
 <form action="Cart.php" method="POST">
 <!-- Item image and name would come from a catalogue page full of products. Customer would pick their option and have it POST to this page. -->
 	<br>
 	<h2 style='font-family: sans-serif; text-align: left; font-weight: normal;font-size: medium;'>
-	<img style="float:left;height:600px;" src="<?php $image="https://aritzia.scene7.com/is/image/Aritzia/medium/f21_04_a05_83755_1274_on_a.jpg"; echo $image ?>">
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><?php $item="The New Cocoon Long Coat"; echo $item ?></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$<?php $price=378; echo $price ?>
+	<img style="float:left;height:600px;" src="<?php echo $image ?>">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><?php echo $item ?></span>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>$<?php echo $price ?></span>
 	<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Colour: <select name="colour" size=1>
 	<option value="White">White
 	<option value="Black">Black

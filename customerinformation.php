@@ -79,7 +79,7 @@
         </table>
         </h2>";
         echo '<div class="submitbutton"><a href = "cartsummary.php"><input type="submit" name="confirmationpage" value="Cart Summary" id="submit"></a>';
-        echo '<div class="submitbutton"><a href = "Catalogue.php"><input type="submit" name="backtocatalogue" value="Back to Catalogue" id="submit"></a>';
+        echo '<div class="submitbutton"><a href = "CatalogueList.php"><input type="submit" name="backtocatalogue" value="Back to Catalogue" id="submit"></a>';
     }
 
     mysqli_close($db);
