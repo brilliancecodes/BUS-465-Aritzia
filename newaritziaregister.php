@@ -57,11 +57,13 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['emai
 		else{
  			$sql = "INSERT INTO customerlogin(firstname,lastname,email,password,creditcard,expiry,cvv,
 			 billingaddress,city,province,country,postalcode) 
-			 VALUES( '$firstname','$lastname','$email','$password','$creditcard','$expiry','$cvv','$billingaddress', '$city','$province','$country','$postalcode');";
+			 VALUES( '$firstname','$lastname','$email','$password','$creditcard','$expiry','$cvv','$billingaddress', 
+			 '$city','$province','$country','$postalcode');";
 			$result=mysqli_query($db,$sql);
 			$_SESSION["login"]=TRUE; 
 			$_SESSION['user']=$email;
-			echo "<h2 class='heading4'>You have successfully created an account with Aritzia. Here are the details of your registration:</h2><br>";
+			echo "<h2 class='heading4'>You have successfully created an account with Aritzia. Here are the details 
+			of your registration:</h2><br>";
 			echo "<h2 class='heading2'>Customer Account Information</h2>";
 			echo "
 			<h2 class='heading3'>
@@ -101,7 +103,8 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['emai
 			</tr>
 			</table>
 			</h2>";
-			echo '<div class="submitbutton"><a href = "cartsummary.php"><input type="submit" name="confirmationpage" value="Cart Summary" id="submit"></a>';
+			echo '<div class="submitbutton"><a href = "cartsummary.php"><input type="submit" name="confirmationpage" 
+			value="Cart Summary" id="submit"></a>';
 			}
 			
 				}
