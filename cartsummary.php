@@ -114,7 +114,8 @@ echo "
 <br>
 <br>
 <p>
-<table style='border-spacing: 3px; border: 1px solid black;margin-left:auto;margin-right:auto;'>
+<table style='border-spacing: 3px; border: 1px solid black;margin-
+left:auto;margin-right:auto;'>
   <tr>
   <th>First Name</th><td>",$x[0],"</td>
     <th width='20%'>Pickup Location</th><td>",$location,"</td>
@@ -145,11 +146,11 @@ echo "
   </tr>
 </table>";
 
-echo '<div class="submitbutton"><a href = "orderconfirm.php"><input type="submit" name="finalconfirmation" value="Confirm Order" id="submit"></a>';
-echo '<div class="submitbutton"><a href = "CatalogueList.php"><input type="submit" name="backtocatalogue" value="Back to Catalogue" id="submit"></a>';
+echo '<div class="submitbutton"><a href = "orderconfirm.php">
+<input type="submit" name="finalconfirmation" value="Confirm Order" id="submit"></a>';
+echo '<div class="submitbutton"><a href = "CatalogueList.php">
+<input type="submit" name="backtocatalogue" value="Back to Catalogue" id="submit"></a>';
 mysqli_close($db);
-
-
 ?>
 
 
