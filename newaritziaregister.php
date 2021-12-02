@@ -57,7 +57,8 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['emai
 		else{
  			$sql = "INSERT INTO customerlogin(firstname,lastname,email,password,creditcard,expiry,cvv,
 			 billingaddress,city,province,country,postalcode) 
-			 VALUES( '$firstname','$lastname','$email','$password','$creditcard','$expiry','$cvv','$billingaddress', '$city','$province','$country','$postalcode');";
+			 VALUES( '$firstname','$lastname','$email','$password','$creditcard','$expiry','$cvv',
+			 '$billingaddress', '$city','$province','$country','$postalcode');";
 			$result=mysqli_query($db,$sql);
 			$query = "SELECT * from customerlogin WHERE email = '$email'; "; 
 			$result2=mysqli_query($db, $query);
