@@ -103,7 +103,8 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['emai
 			</tr>
 			</table>
 			</h2>";
-			echo '<div class="submitbutton"><a href = "cartsummary.php"><input type="submit" name="confirmationpage" 
+			echo '<div class="submitbutton"><a href = "cartsummary.php">
+			<input type="submit" name="confirmationpage" 
 			value="Cart Summary" id="submit"></a>';
 			}
 			
