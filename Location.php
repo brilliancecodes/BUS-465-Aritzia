@@ -66,32 +66,15 @@ $result1 = mysqli_query($db, $query1);
     $query3 = "SELECT * FROM LOCATION WHERE LOCATION_ID IN (" . implode(',',$locationarray) . ")";
     $result3 = mysqli_query($db, $query3);
 
-    // echo mysqli_num_rows($result3);
-/*     if($result3){
-        $location=mysqli_fetch_row($result3);}; */
     $location = [];
     while($row2 = mysqli_fetch_array($result3)) {
         $location[] = $row2['LOCATION_NAME'];
     };
-    // print_r($location);
     
     $numrows = mysqli_num_rows($result3);
-    // $i=0;
-/*     while($i<$numrows){
-        echo $location[$i];
-        $i++;
-    } */
-
-
-    
-
-/*     $locationnames = [];
-    while($row2 = mysqli_fetch_array($result3)) {
-        $locationnames[] = $row2['LOCATION_NAME']; // Print a single column data
-    };
-    echo print_r($locationnames); */
 
 ?>
+	
 <p style='font-family: sans-serif;text-align: center;font-weight: bold; font-size: 20pt;'> Aritzia </p>
 <h2 style='font-family: sans-serif;text-align: center;font-weight: bold; font-size: 16pt;'>Pick-up Location </h2>
 
