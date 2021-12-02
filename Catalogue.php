@@ -48,7 +48,6 @@
 	?>
 
 <form action="Cart.php" method="POST">
-<!-- Item image and name would come from a catalogue page full of products. Customer would pick their option and have it POST to this page. -->
 	<br>
 	<h2 style='font-family: sans-serif; text-align: left; font-weight: normal;font-size: medium;'>
 	<img style="float:left;height:600px;" src="<?php echo $image ?>">
