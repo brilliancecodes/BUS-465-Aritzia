@@ -40,6 +40,5 @@
   <a href="Catalogue.php?item=Prospect Shirt Jacket"><img style="height:600px;" src="https://aritzia.scene7.com/is/image/Aritzia/zoom/f21_03_a04_79830_14140_on_a.jpg"></div>
 </div>
 
-</script>
 </body>
 </html>
