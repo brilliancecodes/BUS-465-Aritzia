@@ -31,7 +31,8 @@
     if (!$db) { die("Connection failed: " .mysqli_connect_error()); }
     mysqli_select_db($db, "AritziaDB");
 
-	$email = $_SESSION['user'];
+
+$email = $_SESSION['user'];
     $query = "SELECT * from customerlogin WHERE email = '$email'; "; 
     $result = mysqli_query($db, $query);
 
