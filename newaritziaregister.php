@@ -57,55 +57,58 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['emai
 		else{
  			$sql = "INSERT INTO customerlogin(firstname,lastname,email,password,creditcard,expiry,cvv,
 			 billingaddress,city,province,country,postalcode) 
-			 VALUES( '$firstname','$lastname','$email','$password','$creditcard','$expiry','$cvv','$billingaddress', 
-			 '$city','$province','$country','$postalcode');";
+			 VALUES( '$firstname','$lastname','$email','$password','$creditcard','$expiry','$cvv','$billingaddress', '$city','$province','$country','$postalcode');";
 			$result=mysqli_query($db,$sql);
+			$query = "SELECT * from customerlogin WHERE email = '$email'; "; 
+			$result2=mysqli_query($db, $query);
 			$_SESSION["login"]=TRUE; 
 			$_SESSION['user']=$email;
-			echo "<h2 class='heading4'>You have successfully created an account with Aritzia. Here are the details 
-			of your registration:</h2><br>";
+			$x=mysqli_fetch_row($result2);
+			$number = $x[4];
+			$masked = str_pad(substr($number,-3), strlen($number), '*', STR_PAD_LEFT);
+			echo "<h2 class='heading4'>You have successfully created an account with Aritzia. 
+			Here are the details of your registration:</h2><br>";
 			echo "<h2 class='heading2'>Customer Account Information</h2>";
 			echo "
 			<h2 class='heading3'>
 			<table style='border: 1px solid black;margin-left:auto;margin-right:auto;'>
 			<tr> 
-			<label><h3><th>First Name:</th><td>",$_POST['firstname'],"</td></h3>
+			<label><h3><th>First Name:</th><td>",$x[0],"</td></h3>
 			</tr>
 			<tr>
-			<h3><th>Last Name:</th><td>",$_POST['lastname'],"</td></h3>
+			<h3><th>Last Name:</th><td>",$x[1],"</td></h3>
 			</tr>
 			<tr> 
-			<h3><th>Email:</th><td>",$_POST['email'],"</td></h3>
+			<h3><th>Email:</th><td>",$x[2],"</td></h3>
 			</tr>
 			<tr>
-			<h3><th>Credit Card:</th><td>",$_POST['creditcard'],"</td></h3>
+			<h3><th>Credit Card:</th><td>",print($masked),"</td></h3>
 			</tr>
 			<tr>
-			<h3><th>Expiry Date:</th><td>",$_POST['expiry'],"</td></h3>
+			<h3><th>Expiry Date:</th><td>",$x[5],"</td></h3>
 			</tr>
 			<tr>
-			<h3><th>CVV:</th><td>",$_POST['cvv'],"</td></h3>
+			<h3><th>CVV:</th><td>",$x[6],"</td></h3>
 			</tr>
 			<tr> 
-			<h3><th>Billing Address:</th><td>",$_POST['billingaddress'],"</td></h3>
+			<h3><th>Billing Address:</th><td>",$x[7],"</td></h3>
 			</tr>
 			<tr> 
-			<h3><th>City:</th><td>",$_POST['city'],"</td></h3>
+			<h3><th>City:</th><td>",$x[8],"</td></h3>
 			</tr>
 			<tr> 
-			<h3><th>Province:</th><td>",$_POST['province'],"</td></h3>
+			<h3><th>Province:</th><td>",$x[9],"</td></h3>
 			</tr>
 			<tr> 
-			<h3><th>Country:</th><td>",$_POST['country'],"</td></h3>
+			<h3><th>Country:</th><td>",$x[10],"</td></h3>
 			</tr>
 			<tr> 
-			<h3><th>Postal Code:</th><td>",$_POST['postalcode'],"</td></h3>
+			<h3><th>Postal Code:</th><td>",$x[11],"</td></h3>
 			</tr>
 			</table>
 			</h2>";
 			echo '<div class="submitbutton"><a href = "cartsummary.php">
-			<input type="submit" name="confirmationpage" 
-			value="Cart Summary" id="submit"></a>';
+			<input type="submit" name="confirmationpage" value="Cart Summary" id="submit"></a>';
 			}
 			
 				}
