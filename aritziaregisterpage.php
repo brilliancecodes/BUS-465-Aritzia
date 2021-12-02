@@ -116,7 +116,8 @@ document.getElementById("postalcode").value="V5P1E8";
 </tr>
 <tr>
 	<td><label for="postalcode"><h5> Postal Code</h5></label></td>
-	<td><input name="postalcode" id="postalcode" type="text" maxlength="30" class="registerinput" pattern="\d{5}(?:-\d{4})?|[a-zA-Z]\d[a-zA-Z] ?\d[a-zA-Z]\d"/></td>
+	<td><input name="postalcode" id="postalcode" type="text" maxlength="30" class="registerinput" 
+		   pattern="\d{5}(?:-\d{4})?|[a-zA-Z]\d[a-zA-Z] ?\d[a-zA-Z]\d"/></td>
 </tr></h2>
 <tr>
 	<td>
