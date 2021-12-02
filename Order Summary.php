@@ -25,7 +25,8 @@
 <body>
 
 <p class="display" align = center > Thank you </p>
-		<p class="display" align = center>Pick up order created. Your item(s) will be held for 14 days. Please use the order ID number as reference when picking up in-store </p>
+		<p class="display" align = center>Pick up order created. Your item(s) will be held for 14 days. 
+			Please use the order ID number as reference when picking up in-store </p>
 <?php
 
 	
@@ -48,30 +49,33 @@ mysqli_close($db);
 ?>
 
 <h2 class='heading2'>Pick-up Details</h2>
-
 <div>
 <table id="myTable" class="display" cellspacing="0" width="0%" Border =1 align = center>
 <thead>
 <tr>
 <td>Order Id:</td>
-<td><?php echo $x[0]  ?>	</td>
+<td><?php echo $x[0]  ?>
+</td>
 </tr>
 
 <tr>
 <td>Customer Name:</td>
-<td><?php echo $x[1]  ?> <?php echo $x[2]  ?> </td>
+<td><?php echo $x[1]  ?> <?php echo $x[2]  ?> 
+</td>
 </tr>
 
 
 <tr>
 <td> Email Address: </td>
-<td> <?php echo $x[3]  ?>			</td>
+<td> <?php echo $x[3]  ?>			
+</td>
 </tr>
 
 
 <tr>
 <td> Location: </td>
-<td> <?php echo $x[4]  ?>				</td>
+<td> <?php echo $x[4]  ?>
+</td>
 </tr>
 
 
@@ -86,22 +90,26 @@ mysqli_close($db);
 <thead>
 <tr>
 <td>Item:</td>
-<td> <?php echo $x[5]  ?>		</td>
+<td> <?php echo $x[5]  ?>
+</td>
 </tr>
 
 <tr>
 <td>Size:</td>
-<td> <?php echo $x[6]  ?>					</td>
+<td> <?php echo $x[6]  ?>					
+</td>
 </tr>
 
 <tr>
 <td> Colour: </td>
-<td>	<?php echo $x[7]  ?>					</td>
+<td>	<?php echo $x[7]  ?>					
+</td>
 </tr>
 
 <tr>
 <td> Quantity: </td>
-<td> <?php echo $x[8]  ?>					</td>
+<td> <?php echo $x[8]  ?>					
+</td>
 </tr>
 </thead>
 </table>
@@ -112,19 +120,22 @@ mysqli_close($db);
 <thead>
 <tr>
 <td>Total:</td>
-<td> <?php echo $x[9]  ?>		</td>
+<td> <?php echo $x[9]  ?>		
+</td>
 </tr>
 
 <tr>
 <td>Credit Card Number:</td>
 <td><?php $number = $x[10];
         $masked = str_pad(substr($number,-4), strlen($number), '*', STR_PAD_LEFT); 
-		echo $masked  ?>						</td>
+		echo $masked  ?>						 
+</td>
 </tr>
 
 <tr>
 <td> Billing Address: </td>
-<td> <?php echo $x[11]  ?>						</td>
+<td> <?php echo $x[11]  ?>						
+</td>
 </tr>
 
 
