@@ -129,7 +129,7 @@ left:auto;margin-right:auto;'>
   <th>Item Colour</th><td>",$colour,"</td>
   </tr>
   <tr>
-  <th>Shipping Address:</th><td>",$x[7],"</td>
+  <th>Billing Address:</th><td>",$x[7],"</td>
   <th>Item Size</th><td>",$size,"</td>
   </tr>
   <tr>
