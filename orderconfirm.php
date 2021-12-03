@@ -31,8 +31,10 @@ $x=mysqli_fetch_row($result);
 $result2 = mysqli_query($db, $query2); */
 
 
-$query3 = "INSERT INTO orders(custfirstname,custlastname,email,location,item,size,colour,quantity,total,creditcard,billingaddress) 
-    VALUES ('$x[0]','$x[1]','$x[2]','$location','$item','$size','$colour','$quantity','$total','$x[4]','$x[7]');";
+$query3 = "INSERT INTO orders(custfirstname,custlastname,email,location,
+item,size,colour,quantity,total,creditcard,billingaddress) 
+    VALUES ('$x[0]','$x[1]','$x[2]','$location','$item','$size','$colour',
+    '$quantity','$total','$x[4]','$x[7]');";
 
 $result3 = mysqli_query($db, $query3);
 
