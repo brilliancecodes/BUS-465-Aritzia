@@ -113,9 +113,7 @@ $masked = str_pad(substr($number,-3), strlen($number), '*', STR_PAD_LEFT);
 echo "
 <br>
 <br>
-<p>
-<table style='border-spacing: 3px; border: 1px solid black;margin-
-left:auto;margin-right:auto;'>
+<table style='border-spacing: 3px; border: 1px solid black;margin-left:auto;margin-right:auto;'>
   <tr>
   <th>First Name</th><td>",$x[0],"</td>
     <th width='20%'>Pickup Location</th><td>",$location,"</td>
