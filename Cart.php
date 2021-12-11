@@ -43,15 +43,32 @@
 		}
 
 	?>
-	
+
+<?php
+	$db = mysqli_connect("localhost", "hwa134", "Q968EhWeHbBFc74LfZtsdYXrG");
+	if (!$db) { die("Connection failed: " .mysqli_connect_error()); }
+	mysqli_select_db($db, "AritziaDB");
+
+	$item=$_SESSION['item'];
+
+	$query="SELECT * FROM catalogue WHERE item='$item'";
+	$result = mysqli_query($db, $query);
+	$x=mysqli_fetch_row($result);
+
+	$imageList = array($x[3], $x[5], $x[7]);
+	$colourList = array($x[2], $x[4], $x[6]);
+	$colour=$colourList[$_POST['colourselect']];
+	$image=$imageList[$_POST['colourselect']];
+
+?>
 <form action="" method="POST" name="myform" onsubmit="select()">
 <div>
   <div>
   <h2 style='font-family: sans-serif; text-align: left; font-weight: normal;font-size: medium;'>
 	<br>
-	<img id="image" style="float:left;height:300px;" src="<?php session_start(); echo $_SESSION['image'] ?>">
+	<img id="image" style="float:left;height:300px;" src="<?php echo $image ?>">
 	&nbsp;&nbsp;&nbsp;<span><?php session_start(); echo $_SESSION['item'] ?></span>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Size <span><?php $size = $_POST['size']; echo $size ?></span>, <span><?php $colour = $_POST['colour']; echo $colour ?></span>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Size <span><?php $size = $_POST['size']; echo $size ?></span>, <span><?php echo $colour ?></span>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Qty: <span><?php $quantity = $_POST['quantity']; echo $quantity ?></span>
 	<br>&nbsp;&nbsp;&nbsp;$<span><?php $price = $_SESSION['price']; echo $price ?></span>
 	<br><br>&nbsp;&nbsp;&nbsp;

@@ -40,23 +40,24 @@
 	$result = mysqli_query($db, $query);
 	$x=mysqli_fetch_row($result);
 
-	$image = $x[1];
-	$price = $x[2];
+	$price = $x[1];
+	$image = array($x[3], $x[5], $x[7]);
+	$colour = array($x[2], $x[4], $x[6]);
 
 	mysqli_close($db);
 
 	?>
 
-<form action="Cart.php" method="POST">
+<form action="Cart.php" method="POST" name="myForm">
 	<br>
 	<h2 style='font-family: sans-serif; text-align: left; font-weight: normal;font-size: medium;'>
-	<img style="float:left;height:600px;" src="<?php echo $image ?>">
+	<img style="float:left;height:600px;" src="<?php echo $image[0] ?>" name="myImage"/>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><?php echo $item ?></span>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>$<?php echo $price ?></span>
-	<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Colour: <select name="colour" size=1>
-	<option value="White">White
-	<option value="Black">Black
-	<option value="Blue">Blue
+	<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Colour: <select name="colourselect" size="1" onchange="switchImage();">
+	<option value="0"><?php echo $colour[0]?></option>
+	<option value="1"><?php echo $colour[1]?></option>
+	<option value="2"><?php echo $colour[2]?></option>
 	</select>
 	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Size: <select name="size" size=1>
 	<option value="S">S
@@ -67,9 +68,23 @@
     <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Proceed to Cart"/> </h2>
     <?php
     $_SESSION['item']=$item;
-    $_SESSION['image']=$image;
     $_SESSION['price']=$price;
     ?>
 </form>
+
+<script>
+	var imageList = Array();
+    imageList[0] = new Image(70, 70);
+    imageList[0].src = "<?php echo $image[0] ?>";
+	imageList[1] = new Image(70, 70);
+    imageList[1].src = "<?php echo $image[1] ?>";
+	imageList[2] = new Image(70, 70);
+    imageList[2].src = "<?php echo $image[2] ?>";
+
+function switchImage(){
+	var selectedImage = document.myForm.colourselect.options[document.myForm.colourselect.selectedIndex].value;
+    document.myImage.src = imageList[selectedImage].src;
+	}
+</script>
 </body>
 </html>
