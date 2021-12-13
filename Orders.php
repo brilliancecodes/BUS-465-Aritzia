@@ -35,7 +35,7 @@ session_start();
 $email=$_SESSION['user'];
 
 
-$query = "SELECT * FROM orders WHERE email = '$email'
+$query = "SELECT * FROM orders WHERE email = '$email' AND Status != 'Cancelled'
 order by ordernumber desc limit 1";
 
 $result = mysqli_query($db, $query);
@@ -99,7 +99,7 @@ mysqli_close($db);
 
 <?php
  echo '<div class="submitbutton"><a href = "Cancel.php"> 
-<input type="submit" name="Cancel Order" value="Confirm Order" id="submit"></a>';
+<input type="submit" name="Cancel Order" value="Cancel Order" id="submit"></a>';
 echo '<div class="submitbutton"><a href = "CatalogueList.php">
 <input type="submit" name="backtocatalogue" value="Back to Catalogue" id="submit"></a>';
 ?>
