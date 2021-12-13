@@ -25,6 +25,7 @@
 	if (isset($_SESSION['login']) && $_SESSION['login'] == TRUE) {
 		echo "<h2 class='heading4'>Logged in user: ",$_SESSION['user'];
 		echo "<a href='logout.php'> <input type='submit' id='logout' style='float: right; margin-top: 0px;' value='Logout'></a>";
+			echo "<a href='Orders.php'> <input type='submit' id='Orders' style='float: right; margin-top: 0px;' value='Orders'></a>";
 		}
 
 	?>
