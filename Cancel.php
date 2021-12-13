@@ -1,4 +1,8 @@
 <?php
+
+session_start();
+$email=$_SESSION['user'];
+
 $db= mysqli_connect("localhost", "hwa134", "Q968EhWeHbBFc74LfZtsdYXrG");
 if (!db) {die("Connection failed: ". mysqli_connect_error()); }
 mysqli_select_db($db, "AritziaDB");
