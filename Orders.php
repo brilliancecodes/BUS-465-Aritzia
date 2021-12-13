@@ -86,10 +86,14 @@ mysqli_close($db);
 </tr>
 <tr>
 <td> Quantity: </td>
-<td> <?php echo $x[8]  ?>					
+<td> <?php echo $x[8]  ?>
 </td>
 </tr>
-<td>
+<tr>
+<td>Refund Amount: </td>
+<td> <?php echo $x[9} ?>
+</td>
+</tr>
 </thead>
 </table>
 
