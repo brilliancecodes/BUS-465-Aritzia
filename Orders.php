@@ -35,7 +35,7 @@ session_start();
 $email=$_SESSION['user'];
 
 
-$query = "SELECT * FROM orders WHERE email = '$email' AND Status != 'Cancelled'
+$query = "SELECT * FROM orders WHERE email = '$email' && 'Status' != 'Cancelled'
 order by ordernumber desc limit 1";
 
 $result = mysqli_query($db, $query);
@@ -86,14 +86,10 @@ mysqli_close($db);
 </tr>
 <tr>
 <td> Quantity: </td>
-<td> <?php echo $x[8]  ?>
+<td> <?php echo $x[8]  ?>					
 </td>
 </tr>
-<tr>
-<td>Refund Amount: </td>
-<td> <?php echo $x[9} ?>
-</td>
-</tr>
+<td>
 </thead>
 </table>
 
