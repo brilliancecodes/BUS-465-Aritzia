@@ -42,12 +42,6 @@ $result = mysqli_query($db, $query);
 $x=mysqli_fetch_row($result);
 
 
-/*$query4 = "SELECT COUNT(email) FROM orders WHERE email = '$email'";
-$result4 = mysqli_query($db, $query4);
-$y = mysqli_fetch_row($result4);
-
-print_r($y);*/
-
 mysqli_close($db);
 
 ?>
